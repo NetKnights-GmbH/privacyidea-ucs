@@ -1,0 +1,14 @@
+Source: privacyidea-ucs
+Maintainer: NetKnights GmbH  <info@netknights.it>
+Section: admin
+Priority: optional
+Build-Depends: debhelper (>= 7.4.3)
+Standards-Version: 3.9.5
+
+Package: privacyidea-ucs
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, privacyidea-venv, mysql-server, univention-config, univention-join, libapache2-mod-wsgi 
+Description: Config files to run privacyIDEA on Univention Corporate Server
+ This is a meta package to run privacyIDEA on UCS.
+ It installs the necessary database, sets up the system and creates the 
+ webserver files.

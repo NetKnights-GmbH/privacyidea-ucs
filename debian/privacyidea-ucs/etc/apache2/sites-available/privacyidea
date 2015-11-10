@@ -1,0 +1,9 @@
+WSGIPythonHome /opt/privacyidea/privacyidea-venv
+WSGIScriptAlias /privacyidea      /etc/privacyidea/privacyideaapp.wsgi
+#
+# The daemon is running as user 'privacyidea'
+# This user should have access to the encKey database encryption file
+WSGIDaemonProcess privacyidea processes=1 threads=15 display-name=%{GROUP} user=privacyidea
+WSGIProcessGroup privacyidea
+WSGIPassAuthorization On
+

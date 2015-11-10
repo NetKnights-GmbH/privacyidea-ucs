@@ -1,0 +1,142 @@
+<p>
+ChangeLog for Version 2.7
+</p>
+<b>Features</b>
+<ul>
+  <li>Add support for U2F tokens</li>
+  <li>Add signature to the API JSON response. Thus
+    the client can verify the response.</li>
+</ul>
+<b>Enhancements</b>
+<ul>
+  <li>When importing tokens, a realm can be chosen, so that all imported
+    tokens are immediately inserted into this realm.</li>
+  <li>The user is able to change his password in the WebUI.</li>
+  <li>The user can assign a token in the WebUI.</li>
+  <li>Avoid the requiring of a PIN for some tokentypes like SSH</li>
+  <li>Migrate to pymysql, the pure python mysql implementation</li>
+  <li>The Audit Log tells if a previous OTP value was used again.</li>
+</ul>
+<b>Fixes</b>
+<ul>
+  <li>Enable login to WebUI with a loginname containing an @ sign.</li>
+  <li>Fix the writing of logfile privacyidea.log</li>
+</ul>
+
+<p>
+ChangeLog for Version 2.6
+</p>
+<b>Features</b>
+<ul>
+<li>Add OCRA base TiQR token to authenticate by scanning
+    a QR code.</li>
+<li>Add Challenge Response authentication to Web UI</li>
+<li>Add 4-Eyes token, to enable two man policy. Two tokens
+    of two users are needed to authenticate.</li>
+<li>"Revoke Token" lets you perform special action on token types.
+    Tokens can be revoke, meaning they are blocked an can not
+    be unblocked anymore.</li>
+</ul>
+
+<b>Enhancements</b>
+<ul>
+<li>Add HA information in the documentation.</li>
+<li>Add OpenVPN documentation.</li>
+<li>Add challenge response policy, to define if e.g. HOTP or TOTP are 
+    allowed to be used in challenge response mode.</li>
+<li>Add hotkeys for easier use of Web Ui.</li>
+<li>Remove wrong system wide PassOnNoUser and PassOnNoToken.</li>
+<li>Set default language to "en" in Web UI.</li>
+</ul>
+
+<b>Fixes</b>
+<ul>
+<li>Fix LDAP bug #179, which allows authentication with
+    wrong password under certain conditions</li>
+<li>Small fixes in coverage tests</li>
+<li>Fix username in web UI during enrollment</li>
+<li>Fix link to privacyIDEA logo in Web UI</li>
+<li>Fixed bug, that user was not able to resync his own tokens.</li>
+</ul>
+
+<p>
+ChangeLog for Version 2.5
+</p>
+
+<b>Features</b>
+<ul>
+<li>Add statistics</li>
+<li>Add German translation</li>
+<li>Add PinHandler in case of random PIN used</li>
+<li>Add automatic documentation of system setup</li>
+<li>Add ownCloud plugin</li>
+</ul>
+  
+<b>Enhancements</b>
+<ul>
+<li>Preset Email and SMS of a user when enrolling token</li>
+<li>Enable LDAP anonymous bind</li>
+<li>Add Hashalgorithms and digits to QR Code</li>
+</ul>
+  
+<b>Fixes</b>
+<ul>
+<li>Fix registration token</li>
+<li>Fix mOTP reuse problem</li>
+</ul>
+
+<p>
+ChangeLog for Version 2.4
+</p>
+<ul>
+<li>Add User Management</li>
+<li>Add Admin Realms to policies, to allow better policies in bigger setups</li>
+<li>Add API key, that can be used for accessing /validate/check</li>
+<li>Load PSKC Token seed files.</li>
+<li>Add more sophisticated logging. Severe errors via Email</li>
+<li>WebUI: Registrtion token can be enrolled in WebUI</li>
+<li>WebUI: The token seed can be displayed in WebUI after generation</li>
+<li>WebUI: Only the token types that are allowed to be enrolled are displayed</li>
+<li>WebUI: Login_Mode Policy: Disable access to WebUI for certain users</li>
+<li>WebUI: Add reload button in Audit view</li>
+<li>SQLResolver: The Where statement is used in all cases</li>
+<li>SSH-Token Application: Only fetch keys of the requested user</li>
+<li>Apache client can work with several hosts on one machine</li>
+<li>Documentation: Tokentypes and Supported Hardware Tokens</li>
+<li>Improve RADIUS module</li>
+<li>WebUI: Fix download of audit log</li>
+<li>Fix missing access right of user to GET /caconnector</li>
+</ul>
+
+<p>
+ChangeLog for Version 2.3.1
+</p>
+<ul>
+<li>Fix the user gets logged out, when he tries to enroll a token.</li>
+</ul>
+<p>
+ChangeLog for Version 2.3
+</p>
+<ul>
+<li>Add connector to remote Certificate Authority</li>
+<li>Add Tokentype "certificate" to manage certificates for users
+    Certificates or Certificate Requests can be uploaded.
+    Certificate Requests (Keypair) can be generated in the browser.</li>
+<li>Add Tokentype "registration" for easier enrollment scenarios.</li>
+<li>Add TokenType "Email" to send OTP via Email.</li>
+<li>Add "First Steps" to online documentation</li>
+<li>Add handling of validity period of token</li>
+<li>Enable download of Audit log as CSV</li>
+<li>Add Resolver Priority, to handle a duplicate user in a realm</li>
+<li>Add TYPO3 Plugin to enable OTP with TYPO3</li>
+<li>Add SCIM Resolver to fetch users from SCIM services</li>
+<li>Fix Failcounter issue</li>
+<li>Fix NTLM password check</li>
+<li>Fix timestep during enrollment</li>
+</ul>
+<p>
+<b>Please note:</b> Using privacyIDEA for up to 10 assigned tokens is free of charge.
+With version 2.3 the number of assigned tokens is checked. If you want to use
+more than 10 assigned tokens, you need to get a subscription file from the
+software vendor.
+</p>

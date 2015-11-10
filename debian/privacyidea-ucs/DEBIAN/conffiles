@@ -1,0 +1,3 @@
+/etc/apache2/sites-available/privacyidea
+/etc/privacyidea/privacyideaapp.wsgi
+/etc/privacyidea/pi.cfg

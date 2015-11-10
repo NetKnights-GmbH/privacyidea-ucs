@@ -1,0 +1,152 @@
+<p>
+Änderungen in Version 2.7
+</p>
+<b>Neue Funktionalitäten</b>
+<ul>
+  <li>Unterstützung für U2F Token wie den Yubikey U2F.</li>
+  <li>Die API beinhaltet nun eine digitale Signature, so dass der Client die Authentizität 
+	überprüfen kann.</li>
+</ul>
+<b>Erweiterungen</b>
+<ul>
+  <li>Beim Token-Import kann direkt ein Realm ausgewählt werden, in
+	den die Token importiert werden.</li>
+  <li>Ein Benutzer kann sein Passwort in der WebUI ändern.</li>
+  <li>Im WebUI kann der Benutzer sich selber einen Token zuweisen.</li>
+  <li>Für manche Token wie SSH wird keine OTP PIN verlangt.</li>
+  <li>Unterstützung von pymysql. Einer reinen Python Implementierung.</li>
+  <li>Konkrete Fehlermeldung, wenn ein alter OTP-Wert nochmal verwendet wird.</li>
+</ul>
+<b>Fehlerbehebungen</b>
+<ul>
+  <li>Login an der WebUI jetzt auch mit Login-Namen, die ein @ enthalten.</li>
+  <li>Fehler beim behoben, dass privacyidea.log Datei manchmal nicht geschrieben wurde.</li>
+</ul>
+
+
+
+
+
+<p>
+Änderungen in Version 2.6
+</p>
+<b>Neue Funktionalitäten</b>
+<ul>
+<li>Die OCRA-basierte TiQR App wird nun zur Authentisierung unterstützt.
+   Die Authentisierung erfolgt einfach durch das Scannen eines QR-Codes.</li>
+<li>Challenge Response Authentisierung an der Web UI.</li>
+<li>Neuer 4-Augen Token. Hiermit kann das 4-Augen-Prinzip umgesetzt werden.
+	Zur Authentisierung sind zwei Token von zwei Personen nötig.</li>
+<li>Mit "Token widerrufen" (revoke) können spezielle Aktionen für einen
+    Tokentyp umgesetzt werden. Ein widerrufener Token ist gesperrt und kann
+    nicht mehr geändert oder aktiviert werden.</li>
+</ul>
+
+<b>Erweiterungen</b>
+<ul>
+<li>Informationen zur Hochverfügbarkeit in die Dokumentation aufgenommen.</li>
+<li>OpenVPN-Dokumentation ergänzt.</li>
+<li>Challenge-Response-Richtlinie erlaubt es, für Token wie HOTP oder TOTP 
+    Challenge-Response zu erlauben oder zu verbieten.</li>
+<li>Manche Funktionen wie Tokenrollout in der Web UI lassen sich über 
+    Hotkeys aufrufen.</li>
+<li>Systemweite PassOnNoUser und PassOnNoToken, die keine Funktion hatten, wurden entfernt.
+    Diese Funktionen lassen sich detaillierter über Richtlinien definieren.</li>
+<li>Standardsprache "en" im Web UI gesetzt.</li>
+</ul>
+
+<b>Fehlerbehebungen</b>
+<ul>
+<li>Der LDAP-Fehler #179 wurde behoben. Unter ganz speziellen Bedingungen 
+    erlaubte er sich mit einem falschen LDAP-Passwort zu authentisieren.</li>
+<li>Kleine Fehler in der Testsuite behoben.</li>
+<li>Benutzername im Web UI während der Rollouts korrigiert.</li>
+<li>Defekter Link auf dem privacyIDEA Logo entfernt.</li>
+<li>Benutzer können nun ihre eigenen Token resyncen.</li>
+</ul>
+
+<p>
+Änderungen in Version 2.5
+</p>
+
+<b>Neue Funktionalitäten</b>
+<ul>
+<li>Statistiken</li>
+<li>Deutsche Übersetzung des WebUI</li>
+<li>Hook für PIN Handler, wenn eine zufällige PIN verwendet wird</li>
+<li>Automatische Dokumentation des System-Setups</li>
+<li>ownCloud Plugin</li>
+</ul>
+
+<b>Erweiterungen</b>
+<ul>
+<li>Email und SMS werden aus dem Verzeichnisdienst vorbelegt, wenn ein entsprechender Token ausgerollt wird.</li>
+<li>LDAP anonymous Bind</li>
+<li>Im QR Code können nun der Hashalgorithmus und die Anzahl der OTP-Stellen verwendet werden.</li>
+</ul>
+
+<b>Fehlerbehebungen</b>
+<ul>
+<li>Fehler im Registrierungstoken behoben.</li>
+<li>Fehler bei der Wiederverwendung eines mOTP behoben.</li>
+</ul>
+
+<p>
+Änderungen in Version 2.4
+</p>
+<ul>
+<li>Benutzermanagement für Benutzer in SQL-Datenbanken.</li>
+<li>Admin Realms können nun in Policies verwendet werden, so dass Policies
+ in großen Szenarien leichter zu definieren sind.</li>
+<li>API Keys können den Zugriff auf /validate/check reglementieren</li>
+<li>PSKC Dateien mit Token-Seeds können nun importiert werden.</li>
+<li>Ein detailiertes logging ist nun möglich. Schwere Fehler können per Email gesendet werden.</li>
+<li>WebUI: Registrierungstoken können nun auch aus dem WebUI heraus ausgerollt werden.</li>
+<li>WebUI: Das reine Token-Seed kann nach der Erzeugung eines Tokens angezeigt werden.</li>
+<li>WebUI: Es werden nur die Token-Typen aufgelistet, die auch tatsächlich per Policy ausgerollt werden dürfen.</li>
+<li>WebUI: Login_Mode Policy: Hiermit kann der Zugriff auf das WebUI komplett verboten werden.</li>
+<li>WebUI: Im Audit-View gibt es nun einen Reload-Button.</li>
+<li>SQLResolver: Das WHERE-Statement wird nun immer verwendet.</li>
+<li>SSH-Token Applikation: Es werden nur die SSH-Keys des angefragten Benutzers zurückgegeben.</li>
+<li>Der Apache Client kann nun mit mehreren vhosts umgehen.</li>
+<li>Die Dokumentation für Token-Typen wurde erweitert.</li>
+<li>WebUI Fix: Download des Audit-Log.</li>
+</ul>
+
+
+<p>
+Änderungen in Version 2.3.1
+</p>
+<ul>
+<li>Das Problem, dass ein Benutzer abgemeldet wird, wenn er einen Token ausrollen will, wurde behoben.</li>
+</ul>
+
+<p>
+Änderungen in Version 2.3
+</p>
+
+<ul>
+<li>Konnektor für Zertifizierungsstellen hingefügt.</li>
+<li>Neuer Tokentyp "certificate", um Benutzerzertifikate zu verwalten.</li>
+<li>Neuer Tokentyp "registration", um Massenrollout zu erleichtern.</li> 
+<li>Neuer Tokentyp "Email", der OTP-Werte per Mail versendet.</li>
+<li>"First Steps" in der Online Dokumentation.</li>
+<li>Gültigkeitsperiode von Token.</li>
+<li>Auditlog per Download als CSV Datei.</li>
+<li>Prioritäten von Resolvern verhindern Konflikt, wenn ein Benutzername
+    öfters in einem Realm vorkommt.</li>
+<li>TYPO3 Plugin.</li>
+<li>SCIM Resolver.</li>
+  
+<li>Fehler mit Failcounter behoben.</li>
+<li>Fehler mit NTLM Passwort Check behoben.</li>
+<li>Fehler mit timestep für TOTP Token behoben.</li>
+<li>Fehler beim Import von Yubikey-Dateien behoben.</li>
+
+</ul>
+<p>
+<b>Bitte beachten Sie:</b> privacyIDEA kann für bis zu 10 zugewiesenen Token 
+kostenlost verwendet werden. In Version 2.3 wird die Anzahl der
+zugewiesenen Token nun überprüft. Wenn Sie mehr als 10 Token zuweisen
+möchten, erhalten Sie eine Subskriptions-Datei vom Hersteller.
+</p>

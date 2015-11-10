@@ -1,0 +1,115 @@
+#!/bin/sh
+#
+# Join script to create privacyIDEA service account and register
+# the service.
+#
+# 2015-03-13 NetKnights GmbH, <info@netknights.it>
+#            * This script creates a service account in the LDAP directory 
+#            * It creates a realm for normal Users with gidNumber 5001
+#            * it creates a realm for administrators with gidNumber 5000
+#
+VERSION=1
+. /usr/share/univention-join/joinscripthelper.lib
+. /usr/share/univention-lib/ldap.sh
+
+joinscript_init
+SERVICE="privacyIDEA"
+eval "$(ucr shell)"
+
+# Register service
+
+ucs_addServiceToLocalhost "$SERVICE" "$@"
+
+udm "computers/$server_role" modify "$@" \
+	--dn "$ldap_hostdn" \
+	--set reinstall=0 || die
+
+# some extended attributes would be added here
+# create the service account
+BINDPW="$(tr -dc A-Za-z0-9_ </dev/urandom | head -c17)"
+LDAPSERVER=ldaps://$(ucr get ldap/server/name):7636
+LDAPBASE=$(ucr get ldap/base)
+USERNAME=privacyidea-$hostname
+# Create a service account to bind to
+BINDDN="uid=$USERNAME,cn=users,$LDAPBASE"
+BINDPW=$(tr -dc A-Za-z0-9_ </dev/urandom | head -c15)
+REALMNAME=$(ucr get domainname)
+
+udm users/user create "$@" \
+	--position "cn=users,$ldap_base" \
+	--option ldap_pwd \
+	--set username="$USERNAME" \
+	--set lastname="privacyIDEA" \
+	--set password="$BINDPW" \
+	--set description="privacyIDEA service"
+
+#udm users/user modify "$@" \
+#    --dn "uid=privacyidea-$hostname,cn=users,$ldap_base" \
+#    --set password="$PASSWORD"
+
+
+# Here we create the default realms for the UCS
+touch /etc/privacyidea-users.install
+chmod 600 /etc/privacyidea-users.install
+cat <<END > /etc/privacyidea-users.install
+{'LDAPURI': '$LDAPSERVER',
+'LDAPBASE': '$LDAPBASE',
+'BINDDN': '$BINDDN',
+'BINDPW': '$BINDPW',
+'LOGINNAMEATTRIBUTE': 'uid',
+'LDAPSEARCHFILTER': '(uid=*)(objectClass=person)(gidNumber=5001)',
+'LDAPFILTER': '(&(uid=%s)(objectClass=person)(gidNumber=5001))',
+'USERINFO': '{"username": "uid", \
+              "phone": "telephoneNumber", \
+              "mobile": "mobile", \
+              "email": "mail", \
+              "surname": "sn", \
+              "givenname": "givenName"}',
+'UIDTYPE': 'DN',
+'AUTHTYPE': 'Simple',
+'NOREFERRALS': True,
+'TIMEOUT': 5,
+'SIZELIMIT': 500
+}
+END
+
+# Here we create the administrator realm
+touch /etc/privacyidea-admins.install
+chmod 600 /etc/privacyidea-admins.install
+cat <<END > /etc/privacyidea-admins.install
+{'LDAPURI': '$LDAPSERVER',
+'LDAPBASE': '$LDAPBASE',
+'BINDDN': '$BINDDN',
+'BINDPW': '$BINDPW',
+'LOGINNAMEATTRIBUTE': 'uid',
+'LDAPSEARCHFILTER': '(uid=*)(objectClass=person)(gidNumber=5000)',
+'LDAPFILTER': '(&(uid=%s)(objectClass=person)(gidNumber=5001))',
+'USERINFO': '{"username": "uid", \
+              "phone": "telephoneNumber", \
+              "mobile": "mobile", \
+              "email": "mail", \
+              "surname": "sn", \
+              "givenname": "givenName"}',
+'UIDTYPE': 'DN',
+'AUTHTYPE': 'Simple',
+'NOREFERRALS': True,
+'TIMEOUT': 5,
+'SIZELIMIT': 500
+}
+END
+
+. /opt/privacyidea/privacyidea-venv/bin/activate
+# Create the users realm
+pi-manage.py resolver create users ldapresolver /etc/privacyidea-users.install
+pi-manage.py realm create $REALMNAME users
+# create the admins realm
+pi-manage.py resolver create admins ldapresolver /etc/privacyidea-admins.install
+pi-manage.py realm create admin admins
+deactivate
+rm -f /etc/privacyidea-users.install
+rm -f /etc/privacyidea-admins.install
+
+invoke-rc.d apache2 restart
+joinscript_save_current_version
+
+exit 0

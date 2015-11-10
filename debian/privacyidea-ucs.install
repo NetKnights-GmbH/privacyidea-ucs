@@ -1,0 +1,17 @@
+deploy/pi.cfg                            etc/privacyidea/
+deploy/apache/privacyideaapp.wsgi        etc/privacyidea/
+
+deploy/privacyIDEA.png			var/www/icon/
+
+# join script
+deploy/usr/lib/univention-install/12privacyidea.inst usr/lib/univention-install/
+deploy/usr/lib/univention-uninstall/12privacyidea.uinst usr/lib/univention-uninstall/
+
+# apache config
+deploy/apache/sites-available/privacyidea	etc/apache2/sites-available/
+
+# Add license controller
+deploy/privacyidea-patch/api/subscription.py		opt/privacyidea/privacyidea-venv/lib/python2.7/site-packages/privacyidea/api/
+deploy/privacyidea-patch/lib/subscription.py		opt/privacyidea/privacyidea-venv/lib/python2.7/site-packages/privacyidea/lib/
+deploy/privacyidea-patch/static/components/config/controllers/system.addons.js 	opt/privacyidea/privacyidea-venv/lib/python2.7/site-packages/privacyidea/static/components/config/controllers/
+deploy/privacyidea-patch/static/components/config/views/config.system.addons.html	opt/privacyidea/privacyidea-venv/lib/python2.7/site-packages/privacyidea/static/components/config/views/

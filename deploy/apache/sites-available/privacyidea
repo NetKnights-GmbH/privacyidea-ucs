@@ -1,0 +1,14 @@
+WSGIPythonHome /opt/privacyidea/privacyidea-venv
+WSGIScriptAlias /privacyidea      /etc/privacyidea/privacyideaapp.wsgi
+#
+# The daemon is running as user 'privacyidea'
+# This user should have access to the encKey database encryption file
+#WSGIDaemonProcess privacyidea processes=1 threads=15 display-name=%{GROUP} user=privacyidea \
+#        python-path=/opt/privacyidea/privacyidea-venv/lib/python2.7:/opt/privacyidea/privacyidea-venv/lib/python2.7/plat-linux2:/opt/privacyidea/privacyidea-venv/lib/python2.7/lib-tk:/opt/privacyidea/privacyidea-venv/lib/python2.7/lib-old:/opt/privacyidea/privacyidea-venv/lib/python2.7/lib-dynload:/usr/lib/python2.7:/usr/lib/python2.7/plat-linux2:/usr/lib/python2.7/lib-tk:/opt/privacyidea/privacyidea-venv/local/lib/python2.7/site-packages:/opt/privacyidea/privacyidea-venv/lib/python2.7/site-packages
+
+<Directory "/etc/privacyidea/">
+        # The daemon is running as user 'privacyidea'
+        # This user should have access to the encKey database encryption file
+        WSGIProcessGroup privacyidea
+        WSGIPassAuthorization On
+</Directory>

@@ -1,0 +1,42 @@
+<h3>Überblick</h3>
+<p>
+privacyIDEA wird mit einer Standardkonfiguration für Benutzer und Administratoren installiert.
+privacyIDEA stellt ein Web UI bereit, an dem sich normale Benutzer und auch Administratoren anmelden können.
+</p>
+<p>
+Benutzer können sich einfach mit ihrem Benutzernamen und dem Domänenpasswort anmelden.
+</p>
+<p>
+Administratoren melden sich mit <em>&lt;adminname&gt;@admin</em> und dem Domänenpasswort an, um administrative Rechte zu erhalten.
+</p>
+<p>
+An der Kommandozeile können unabhängig vom Verzeichnisdienst mit dem tool <em>pi-manage.py</em> Administratoren erstellt werden.
+</p>
+<p>
+privacyIDEA nutzt MySQL, um Tokeninformationen zu speichern und den Apache
+Webserver, um eine Management Web UI und REST API bereitzustellen.
+</p>
+<p>Die allgemeine Dokumentation findet sich
+<a href="http://privacyidea.readthedocs.org">hier</a></p>
+
+<h3>Erste Schritte</h3>
+<p>Als erstes können Sie bspw. Token für die Benutzer ausrollen. Lesen Sie 
+<a href="http://privacyidea.readthedocs.org/en/latest/firststeps/token.html">hier</a>,
+wie Sie eine Google Authenticator App für Benutzer initialisieren.</p>
+
+<h3>Anwendungen</h3>
+<p>Nutzen Sie privacyIDEA, um die Anmeldung an Ihren bestehenden Applikationen um einen zweiten Faktor zu erweitern zu somit sicherer zu machen:
+<ul>
+<li>Lokales Login oder <b>SSH</b> auf ihre <b>UCS Systeme</b> mittels <em>privacyidea-pam</em>.</li>
+<li>Lokales Login an Ihre <b>Windows Clients</b> mittels <em>privacyIDEA Credential Provider</em>.</li>
+<li>Login an Web Applikationen wie <b>OTRS</b> mittels entsprechender <em>Plugins</em>.</li>
+<li>Login ins <b>OpenVPN</b> ebenfalls mittels <em>privacyidea-pam</em>.</li>
+</ul>
+</p>
+
+<h3>Open Source</h3>
+<p>
+privacyIDEA ist ein freies Projekt. Feedback, Kritik und Anregungen helfen bei der Weiterentwicklung. Posten Sie diese auf 
+<a href="https://github.com/privacyidea/privacyidea">Github</a> als entsprechende Bugreports oder in der 
+<a href="https://groups.google.com/forum/#!forum/privacyidea">Google Group</a>.
+</p>

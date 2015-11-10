@@ -1,0 +1,42 @@
+<h3>Overview</h3>
+<p>
+privacyIDEA is installed with a default configuration for users and administrators.
+privacyIDEA provides a web UI, where normal users and administrators can login.
+</p>
+<p>
+Users can login with their username and their domain password.
+</p>
+<p>
+Administrators need to login with <em>&lt;adminname&gt;@admin</em> and their domain password, to get administrative rights.
+</p>
+<p>
+At the command line the tool <em>pi-manage.py</em> can be used to manage additional administrators that are independent of the LDAP directory.
+</p>
+<p>
+privacyIDEA uses MySQL to store the token information and
+the Apache webserver to provide a management UI and a REST API.
+</p>
+<p>Public documentation can be found
+<a href="http://privacyidea.readthedocs.org">here</a></p>
+
+<h3>First steps</h3>
+<p>You can now start to enroll tokens for the users. You can read
+<a href="http://privacyidea.readthedocs.org/en/latest/firststeps/token.html">here</a>,
+how to enroll a Google Authenticator App to users.</p>
+
+<h3>Applications</h3>
+<p>You can use privacyIDEA, to add a second factor when login in to your existing applications increasing security dramatically:
+<ul>
+<li>Local login or <b>SSH</b> to your <b>UCS Systems</b> using <em>privacyidea-pam</em>.</li>
+<li>Local login to your <b>Windows Clients</b> using <em>privacyIDEA Credential Provider</em>.</li>
+<li>Login at web applications like <b>OTRS</b> using corresponding <em>plugins</em>.</li>
+<li>Login to <b>OpenVPN</b> using <em>privacyidea-pam</em>.</li>
+</ul>
+</p>
+
+<h3>Open Source</h3>
+<p>
+privacyIDEA is a free project. Feedback, requests and proposals help to go on with the development. Post feedback at 
+<a href="https://github.com/privacyidea/privacyidea">Github</a> as an issue or on the 
+<a href="https://groups.google.com/forum/#!forum/privacyidea">Google group</a>.
+</p>

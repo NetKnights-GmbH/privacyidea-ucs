@@ -1,0 +1,38 @@
+#!/bin/sh
+# see: dh_installdeb(1)
+
+set -e
+
+# source debconf library
+. /usr/share/debconf/confmodule
+
+# Source dbconfig-common functions
+if [ -f /usr/share/dbconfig-common/dpkg/postinst.pgsql  ]; then
+  . /usr/share/dbconfig-common/dpkg/postinst.pgsql
+fi
+
+unset_sites () {
+	rm -f /etc/apache2/sites-enabled/privacyidea
+}
+
+disable_weblink() {
+	export P="ucs/web/overview/entries/service"
+	APP=privacyIDEA
+	HOSTNAME=$(ucr get hostname)
+	DOMAINNAME=$(ucr get domainname)
+	ucr unset \
+		"$P/$APP"/description/de \
+		"$P/$APP"/description \
+		"$P/$APP"/icon \
+		"$P/$APP"/label/de \
+		"$P/$APP"/label \
+		"$P/$APP"/link \
+		"$P/$APP"/priority
+}
+
+unset_sites
+#disable_weblink
+
+
+#DEBHELPER#
+exit 0

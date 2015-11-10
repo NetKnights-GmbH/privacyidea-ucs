@@ -1,0 +1,58 @@
+privacyidea-ucs (2.7-4) wheezy; urgency=low
+
+  * Adapt Changelog
+  * Change to pymysql-driver in the postinst script
+  * Move the WSGIProcessGroup and WSGIPassAuthorization to a directory
+
+ -- NetKnights GmbH <info@netknights.it>  Tue, 10 Nov 2015 13:00:00 +0200
+
+privacyidea-ucs (2.6-1) wheezy; urgency=low
+
+  * Adapt Changelog and UPDATE
+
+ -- NetKnights GmbH <info@netknights.it>  Fri, 11 Sep 2015 09:00:00 +0200
+
+privacyidea-ucs (2.5-1) wheezy; urgency=low
+
+  * Adapt UPDATE
+
+ -- NetKnights GmbH <info@netknights.it>  Tue, 18 Aug 2015 09:55:00 +0200
+
+privacyidea-ucs (2.4-1) wheezy; urgency=low
+
+  * Adapt UPDATE README
+
+ -- NetKnights GmbH <info@netknights.it>  Thu, 25 Jun 2015 17:45:00 +0200
+
+privacyidea-ucs (2.3.1-1) wheezy; urgency=low
+
+  * Adapt UPDATE README
+
+ -- NetKnights GmbH <info@netknights.it>  Sat, 30 May 2015 13:30:00 +0200
+
+
+privacyidea-ucs (2.3-1) wheezy; urgency=low
+
+  * Add license components
+
+ -- NetKnights GmbH <info@netknights.it>  Fri, 22 May 2015 19:45:00 +0200
+
+privacyidea-ucs (2.2-1) wheezy; urgency=low
+
+  * rename unjoin script
+
+ -- NetKnights GmbH <info@netknights.it>  Thu, 10 Apr 2015 15:45:00 +0200
+
+privacyidea-ucs (2.2~dev2) wheezy; urgency=low
+
+  * handle the unjoin script
+  * remove weblinks
+
+ -- NetKnights GmbH <info@netknights.it>  Thu, 10 Apr 2015 10:00:00 +0200
+
+
+privacyidea-ucs (2.2~dev1) wheezy; urgency=low
+
+  * initial build for App Center
+
+ -- NetKnights GmbH <info@netknights.it>  Thu, 09 Apr 2015 16:00:00 +0200
