@@ -1,10 +1,10 @@
-privacyidea-ucs (2.7-4) wheezy; urgency=low
+privacyidea-ucs (2.7-6) wheezy; urgency=low
 
   * Adapt Changelog
   * Change to pymysql-driver in the postinst script
   * Move the WSGIProcessGroup and WSGIPassAuthorization to a directory
 
- -- NetKnights GmbH <info@netknights.it>  Tue, 10 Nov 2015 13:00:00 +0200
+ -- NetKnights GmbH <info@netknights.it>  Wed, 11 Nov 2015 19:00:00 +0200
 
 privacyidea-ucs (2.6-1) wheezy; urgency=low
 
