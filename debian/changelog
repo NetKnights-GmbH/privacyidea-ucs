@@ -1,3 +1,10 @@
+privacyidea-ucs (2.8.1-1) wheezy; urgency=low
+
+  * Add pymysql-sa into base package
+  * UPdate to 2.8.1
+
+ -- NetKnights GmbH <info@netknights.it>  Fri, 04 Dec 2015 20:40:00 +0200
+
 privacyidea-ucs (2.7-6) wheezy; urgency=low
 
   * Adapt Changelog
