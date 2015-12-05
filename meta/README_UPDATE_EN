@@ -1,4 +1,40 @@
 <p>
+ChangeLog for Version 2.8.1
+</p>
+<b>Features</b>
+<ul>
+  <li>Improve U2F support with trusted facets</li>
+  <li>Add Challenge Response and U2F support to SAML</li>
+  <li>Add Web UI theming</li>
+  <li> Add possibility to use REMOTE_USER for authentication at Web UI</li>
+  <li> Fuzzy Authentication: restrict time since last authentication</li>
+</ul>
+
+<b>Enhancements</b>
+<ul>
+  <li> Allow mangle policy when fetching ssh keys</li>
+  <li> Add realm support to ownCloud plugin</li>
+  <li> Support Drupal passwords in SQL resolver</li>
+  <li> Add validity period to token enrollment</li>
+  <li> Set default enrollment token type in Web UI</li>
+  <li> Add scope to LDAP resolver</li>
+</ul>
+
+<b>Fixes</b>
+<ul>
+  <li> Fix failcounter reset for challenge response tokens</li>
+  <li> Fix confusing DB errors (column exist) during installation</li>
+  <li> Fix email token TLS checkbox saving</li>
+  <li> Fix TOTP testing in Web UI</li>
+  <li> Fix SMS config loading in Web UI</li>
+  <li> Fix problem when using encrypted encryption key</li>
+  <li> Fix upper case problem when logging in to web UI
+    with REMOTE_USER</li>
+  <li> Fix allow set an empty PIN in the web UI</li>
+  <li> Fix import of token file in Web UI</li>
+</ul>
+
+<p>
 ChangeLog for Version 2.7
 </p>
 <b>Features</b>
