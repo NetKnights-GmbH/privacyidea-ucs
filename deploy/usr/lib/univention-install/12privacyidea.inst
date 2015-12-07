@@ -101,11 +101,11 @@ END
 
 . /opt/privacyidea/privacyidea-venv/bin/activate
 # Create the users realm
-pi-manage.py resolver create users ldapresolver /etc/privacyidea-users.install
-pi-manage.py realm create $REALMNAME users
+pi-manage resolver create users ldapresolver /etc/privacyidea-users.install
+pi-manage realm create $REALMNAME users
 # create the admins realm
-pi-manage.py resolver create admins ldapresolver /etc/privacyidea-admins.install
-pi-manage.py realm create admin admins
+pi-manage resolver create admins ldapresolver /etc/privacyidea-admins.install
+pi-manage realm create admin admins
 deactivate
 rm -f /etc/privacyidea-users.install
 rm -f /etc/privacyidea-admins.install

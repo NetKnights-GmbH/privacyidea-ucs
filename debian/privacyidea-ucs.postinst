@@ -41,7 +41,7 @@ create_files() {
         chmod 600 /etc/privacyidea/enckey
         chmod 600 /etc/privacyidea/private.pem
 	# we need to change access right, otherwise each local user could call
-	# pi-manage.py
+	# pi-manage
 	chgrp root /etc/privacyidea/pi.cfg
 	chmod 640 /etc/privacyidea/pi.cfg
 }
