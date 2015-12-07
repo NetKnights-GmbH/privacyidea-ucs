@@ -10,23 +10,26 @@ Benutzer können sich einfach mit ihrem Benutzernamen und dem Domänenpasswort a
 Administratoren melden sich mit <em>&lt;adminname&gt;@admin</em> und dem Domänenpasswort an, um administrative Rechte zu erhalten.
 </p>
 <p>
-An der Kommandozeile können unabhängig vom Verzeichnisdienst mit dem tool <em>pi-manage.py</em> Administratoren erstellt werden.
+An der Kommandozeile können unabhängig vom Verzeichnisdienst mit dem tool <em>pi-manage</em> Administratoren erstellt werden.
 </p>
 <p>
 privacyIDEA nutzt MySQL, um Tokeninformationen zu speichern und den Apache
 Webserver, um eine Management Web UI und REST API bereitzustellen.
 </p>
-<p>Die allgemeine Dokumentation findet sich
-<a href="http://privacyidea.readthedocs.org">hier</a></p>
 
 <h3>Erste Schritte</h3>
 <p>Als erstes können Sie bspw. Token für die Benutzer ausrollen. Lesen Sie 
 <a href="http://privacyidea.readthedocs.org/en/latest/firststeps/token.html">hier</a>,
 wie Sie eine Google Authenticator App für Benutzer initialisieren.</p>
 
+<p>Die allgemeine Dokumentation findet sich
+<a href="http://privacyidea.readthedocs.org">hier</a></p>
+
 <h3>Anwendungen</h3>
 <p>Nutzen Sie privacyIDEA, um die Anmeldung an Ihren bestehenden Applikationen um einen zweiten Faktor zu erweitern zu somit sicherer zu machen:
 <ul>
+<li><b>Single Sign On</b> in der UCS Domäne.</li>
+<li>Zwei-Faktor-Authentifizierung an der Univention Management Konsole mittels <em>privacyidea-pam</em>.</li>
 <li>Lokales Login oder <b>SSH</b> auf ihre <b>UCS Systeme</b> mittels <em>privacyidea-pam</em>.</li>
 <li>Lokales Login an Ihre <b>Windows Clients</b> mittels <em>privacyIDEA Credential Provider</em>.</li>
 <li>Login an Web Applikationen wie <b>OTRS</b> mittels entsprechender <em>Plugins</em>.</li>
@@ -34,9 +37,22 @@ wie Sie eine Google Authenticator App für Benutzer initialisieren.</p>
 </ul>
 </p>
 
+<h3>Support</h3>
+<p>
+Im Unternehmensumfeld ist es unerlässlich für eingesetzte Sicherheitssoftware Support zu beziehen.
+Dies stellt sicher, dass Probleme
+zeitnah gelöst werden und die Software auch morgen noch dem Stand der Technik entspricht.
+</p>
+<p>
+Sie können privacyIDEA mit
+bis zu 10 Benutzern testen. Darüber hinaus erhalten Sie Support durch die NetKnights GmbH.
+Die NetKnights GmbH entwickelt privacyIDEA und 
+<a href="https://netknights.it/produkte/privacyidea4ucs/">bietet dafür verschiedenen Support-Stufen an</a>. 
+</p>
+
 <h3>Open Source</h3>
 <p>
-privacyIDEA ist ein freies Projekt. Feedback, Kritik und Anregungen helfen bei der Weiterentwicklung. Posten Sie diese auf 
+privacyIDEA ist auch ein freies Projekt. Feedback, Kritik und Anregungen helfen bei der Weiterentwicklung. Posten Sie diese auf 
 <a href="https://github.com/privacyidea/privacyidea">Github</a> als entsprechende Bugreports oder in der 
 <a href="https://groups.google.com/forum/#!forum/privacyidea">Google Group</a>.
 </p>
