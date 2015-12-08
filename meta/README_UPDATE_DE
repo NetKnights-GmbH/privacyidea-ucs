@@ -4,16 +4,16 @@
 <b>Neue Funktionalitäten</b>
 <ul>
   <li>Die U2F-Unterstütung wurde verbessert. Trusted Facets.</li>
-  <li>Challenge Response und U2F für SAML wurde hinzugefügt.</li>
-  <li>Das WebUI unterstütz nun Themes.</li>
+  <li>Challenge Response und U2F für SAML wurden hinzugefügt.</li>
+  <li>Das WebUI unterstützt nun Themes.</li>
   <li>Am WebUI kann man sich mit HTTP Basic Auth und REMOTE_USER anmelden.</li>
-  <li> Fuzzy Authentication: Zeit und Anzahl für Authentisierungsversuche können beschränkt werden.</li>
+  <li> Fuzzy Authentication: Zeit und Anzahl der Authentisierungsversuche können beschränkt werden.</li>
 </ul>
 
 <b>Erweiterungen</b>
 <ul>
   <li> Die "Mangle" Richtlinie kann nun auch für SSH Keys angewendet werden.</li>
-  <li> Das ownCloud plugin unterstützt auch Realms.</li>
+  <li> Das ownCloud plugin unterstützt nun Realms.</li>
   <li> Der SQLResolver unterstützt nun Drupal Passwörter. </li>
   <li> Während des Rollouts des Tokens kann der Gültigkeitszeitraum angegeben werden.</li>
   <li> Der Standard-Typ des auszurollenden Tokens im WebUI kann angegeben werden.</li>
