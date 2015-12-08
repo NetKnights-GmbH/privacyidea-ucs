@@ -26,20 +26,20 @@ wie Sie eine Google Authenticator App für Benutzer initialisieren.</p>
 <a href="http://privacyidea.readthedocs.org">hier</a></p>
 
 <h3>Anwendungen</h3>
-<p>Nutzen Sie privacyIDEA, um die Anmeldung an Ihren bestehenden Applikationen um einen zweiten Faktor zu erweitern zu somit sicherer zu machen:
+<p>Nutzen Sie privacyIDEA, um die Anmeldung an Ihren bestehenden Applikationen um einen zweiten Faktor zu erweitern und somit sicherer zu machen:
 <ul>
 <li><b>Single Sign On</b> in der UCS Domäne.</li>
-<li>Zwei-Faktor-Authentifizierung an der Univention Management Konsole mittels <em>privacyidea-pam</em>.</li>
+<li>Zwei-Faktor-Authentifizierung an der <b>Univention Management Konsole</b> mittels <em>privacyidea-pam</em>.</li>
 <li>Lokales Login oder <b>SSH</b> auf ihre <b>UCS Systeme</b> mittels <em>privacyidea-pam</em>.</li>
 <li>Lokales Login an Ihre <b>Windows Clients</b> mittels <em>privacyIDEA Credential Provider</em>.</li>
-<li>Login an Web Applikationen wie <b>OTRS</b> mittels entsprechender <em>Plugins</em>.</li>
+<li>Login an Web Applikationen wie <b>OTRS</b>, <b>ownCloud</b> oder <b>Zarafa</b> mittels entsprechender <em>Plugins</em>.</li>
 <li>Login ins <b>OpenVPN</b> ebenfalls mittels <em>privacyidea-pam</em>.</li>
 </ul>
 </p>
 
 <h3>Support</h3>
 <p>
-Im Unternehmensumfeld ist es unerlässlich für eingesetzte Sicherheitssoftware Support zu beziehen.
+Im Unternehmensumfeld ist es unerlässlich, für eingesetzte Sicherheitssoftware Support zu beziehen.
 Dies stellt sicher, dass Probleme
 zeitnah gelöst werden und die Software auch morgen noch dem Stand der Technik entspricht.
 </p>

@@ -32,7 +32,7 @@ how to enroll a Google Authenticator App to users.</p>
 <li>Two Factor Authentication at the <b>Univention Management Console</b> using <em>privacyidea-pam</em>.</li>
 <li>Local login or <b>SSH</b> to your <b>UCS Systems</b> using <em>privacyidea-pam</em>.</li>
 <li>Local login to your <b>Windows Clients</b> using <em>privacyIDEA Credential Provider</em>.</li>
-<li>Login at web applications like <b>OTRS</b> using corresponding <em>plugins</em>.</li>
+<li>Login at web applications like <b>OTRS</b>, <b>ownCloud</b> or <b>Zarafa</b> using corresponding <em>plugins</em>.</li>
 <li>Login to <b>OpenVPN</b> using <em>privacyidea-pam</em>.</li>
 </ul>
 </p>
