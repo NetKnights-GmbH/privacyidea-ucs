@@ -1,4 +1,33 @@
 <p>
+ChangeLog for Version 2.9
+</p>
+<b>Features</b>
+<ul>
+<li>New token type: Security questions or questionnaire token.</li>
+<li>New token type: Paper token. OTP values printed on a piece of paper.</li>
+<li>Yubico Validation API: The yubikey tokens can authenticate via
+    /ttype/yubikey which follows the Yubico Validation Protocol.</li>
+</ul>
+
+<b>Enhancements</b>
+<ul>
+ <li>Add Web UI view to display the active challenges.<li>
+ <li>The issuer for the Google Authenticator app can be configured.</li>
+ <li>The LDAP machine resolver uses an LDAP server pool.</li>
+ <li>The LDAP user resolver returns a list of mobile numbers.</li>
+<ul>
+
+<b>Fixes</b>
+<ul>
+ <li>The test email for the email token now has a sent date.</li>
+ <li>Fix problem when using encrypted encryption key.</li>
+ <li>Fix upper case problem when logging in to web UI
+    with REMOTE_USER.</li>
+ <li>Fix allow set an empty PIN in the web UI.</li>
+ <li>Fix import of token file in Web UI.</li>
+</ul>
+
+<p>
 ChangeLog for Version 2.8.1
 </p>
 <b>Features</b>

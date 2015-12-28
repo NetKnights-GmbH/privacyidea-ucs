@@ -1,4 +1,36 @@
 <p>
+Änderungen in Version 2.9
+</p>
+<b>Neue Funktionalitäten</b>
+<ul>
+<li>Neuer Tokentyp: Sicherheitsfragen.</li>
+<li>Neuer Tokentyp:: Papier-Token oder TAN-Listen.</li>
+<li>Yubico Validation Protokoll: Yubikey können gegen /ttype/yubikey authentifiziert
+   werden. Dies entspricht dem Yubico Validation Protokoll. Somit können alle Yubico clients
+   verwendet werden.</li>
+</ul>
+
+<b>Erweiterungen</b>
+<ul>
+	<li>Im WebUI können die aktiven Challenges der Challenge-Response-Token
+angesehen werden.</li>
+	<li>Beim Ausrollen eines Google Authenticators kann eine Policy mit dem "Issuer" gesetzt werden.</li>
+	<li>Der LDAP Maschinen-Resolver nutzt nun auch ein LDAP Server-Pool.</li>
+	<li>Der LDAP-Resolver liefert eine Liste von Handy-Nummern zurück. Aus dieser kann beim Ausrollen eines SMS-Token eine Nummer
+ausgewählt werden.</li>
+</ul>
+
+<b>Fehlerbehebungen</b>
+<ul>
+	<li>Die Test-Email des Email-Tokens enthält nun auch ein Datum.</li>
+	<li>Problem mit dem verschlüsselten Verschlüsselungskey behoben.</li>
+	<li>Problem mit Großbuchstaben behoben, wenn man sich am UI mit REMOTE_USER anmeldet.</li>
+	<li>Im WebUI kann nun eine leere PIN gesetzt werden.</li>
+	<li>Problem beim Import von Token-Dateien wurde behoben.</li>
+</ul>
+
+
+<p>
 Änderungen in Version 2.8.1
 </p>
 <b>Neue Funktionalitäten</b>
