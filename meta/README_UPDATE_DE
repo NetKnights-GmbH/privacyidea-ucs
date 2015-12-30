@@ -4,8 +4,8 @@
 <b>Neue Funktionalitäten</b>
 <ul>
 <li>Neuer Tokentyp: Sicherheitsfragen.</li>
-<li>Neuer Tokentyp:: Papier-Token oder TAN-Listen.</li>
-<li>Yubico Validation Protokoll: Yubikey können gegen /ttype/yubikey authentifiziert
+<li>Neuer Tokentyp: Papier-Token oder TAN-Listen.</li>
+<li>Yubico Validation Protokoll: Yubikeys können gegen /ttype/yubikey authentifiziert
    werden. Dies entspricht dem Yubico Validation Protokoll. Somit können alle Yubico clients
    verwendet werden.</li>
 </ul>
