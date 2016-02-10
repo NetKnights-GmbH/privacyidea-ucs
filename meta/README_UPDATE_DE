@@ -1,3 +1,35 @@
+<p>Änderungen in Version 2.10</p>
+<b>Neue Funktionalitäten</b>
+<ul>
+	<li>Benutzer-Registrierung: Ein Benutzer kann sich selber registrieren und somit für sich einen neuen Account erzeugen.</li>
+	<li>Passwort-Reset: Mit Hilfe eines Recovery Tokens kann der Benutzer sein Passwort zurücksetzen, ohne den Administrator oder den Helpdesk behelligen zu müssen.</li>
+	<li>Token Enrollment Wizard zum einfachen und kostensparenden Ausrollen durch den Benutzer selbst.</li>
+	<li>SMTP Server: Der Administrator kann eine oder mehrere Email-Server-Konfigurationen zentral definieren, um diese dann an verschiedenen Stellen in privacyIDEA zu nutzen:
+<ul>
+	<li>Email Token,</li>
+	<li>SMTP SMS Provider,</li>
+	<li>Registrierungsprozess,</li>
+	<li>Passwort-Reset.</li>
+</ul>
+</li>
+</ul>
+<b>Erweiterungen</b>
+<ul>
+	<li>Einfacheres Rollout von Smartphone Apps für HOTP und TOTP. Es werden OTP-Länge, Hash und Timestep in der UI nicht angezeigt, wenn entsprechende Richtlinien definiert sind.</li>
+	<li>Import von Aladdin/SafeNet XML Dateien.</li>
+	<li>Import von PSKC-Dateien (mit Passwort verschlüsselt)</li>
+	<li>Import von PSKC-Dateien (mit AES-Key verschlüsselt)</li>
+</ul>
+<b>Fehlerbehebungen</b>
+<ul>
+	<li>Support LDAP passwords with special non-ascii characters.</li>
+	<li>Support LDAP BIND with special non-ascii characters.</li>
+	<li>Fix problem with encrypted encryption key.</li>
+	<li>Fix upgrading DB Schema for postgresql+psycopg2.</li>
+	<li>Fix UI displaying of saved SMS Provider.</li>
+	<li>Do not start challenge response with a locked/disabled token.</li>
+</ul>
+
 <p>
 Änderungen in Version 2.9
 </p>

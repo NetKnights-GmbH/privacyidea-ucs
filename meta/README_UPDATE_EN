@@ -1,3 +1,35 @@
+<p>ChangeLog for Version 2.10</p>
+<b>Features</b>
+<ul>
+	<li>User Registration: A user may register himself and thus create his new user account.</li>
+	<li>Password Reset: Using a recovery token a user may issue a password reset without bothering the administrator or the help desk.</li>
+	<li>Enrollment Wizard for easy user token enrollment</li>
+	<li>SMTP Servers: Define several system wide SMTP settings and use these for
+<ul>
+	<li>Email token,</li>
+	<li>SMTP SMS Provider,</li>
+	<li>registration process,</li>
+	<li>or password reset.</li>
+</ul>
+</li>
+</ul>
+<b>Enhancements</b>
+<ul>
+	<li>Ease the Smartphone App (Google Authenticator) rollout. Hide otplen, hash, timestep in the UI if a policy is defined.</li>
+	<li>Add import of Aladdin/SafeNet XML file.</li>
+	<li>Add import of password encrypted PSKC files.</li>
+	<li>Add import of key encrypted PSKC files.</li>
+</ul>
+<b>Fixes</b>
+<ul>
+	<li>Support LDAP passwords with special non-ascii characters.</li>
+	<li>Support LDAP BIND with special non-ascii characters.</li>
+	<li>Fix problem with encrypted encryption key.</li>
+	<li>Fix upgrading DB Schema for postgresql+psycopg2.</li>
+	<li>Fix UI displaying of saved SMS Provider.</li>
+	<li>Do not start challenge response with a locked/disabled token.</li>
+</ul>
+
 <p>
 ChangeLog for Version 2.9
 </p>
