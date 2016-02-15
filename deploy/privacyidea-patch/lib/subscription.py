@@ -96,7 +96,7 @@ GW0yofQJjWecUHwBkZlawBz0lJBKDQObtUsjHB80VTnPGTcs4KYH+if8UHoR6Aug
 
     # check the expiration date
     if subscription.get("expires") != "never":
-        date_now = datetime.datetime.utcnow()
+        date_now = datetime.datetime.utcnow() - datetime.timedelta(days=1)
         date_exp = datetime.datetime.strptime(subscription.get("expires"),
                                               "%Y-%m-%d")
         if date_now > date_exp:

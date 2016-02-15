@@ -19,7 +19,7 @@
  *
  */
 myApp.controller("systemAddonController", function ($scope, $location,
-                                               $rootScope, $state,
+                                               $rootScope, $state, inform,
                                                AuthFactory, $upload, $http,
                                                instanceUrl) {
     $scope.upload = function (files) {
@@ -37,7 +37,8 @@ myApp.controller("systemAddonController", function ($scope, $location,
                     if (error.result.error.code == -401) {
                         $state.go('login');
                     } else {
-                        addError(error.result.error.message);
+                        inform.add(error.result.error.message,
+                                    {type: "danger", ttl: 10000});
                     }
                 });
             }
@@ -54,7 +55,8 @@ myApp.controller("systemAddonController", function ($scope, $location,
             if (error.result.error.code == -401) {
                 $state.go('login');
             } else {
-                addError(error.result.error.message);
+                inform.add(error.result.error.message,
+                            {type: "danger", ttl: 10000});
             }
         });
     };
