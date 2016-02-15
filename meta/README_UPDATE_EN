@@ -1,4 +1,13 @@
 <p>ChangeLog for Version 2.10</p>
+<b>Subscriptions</b>
+<p>
+Starting with version 2.10 
+<a href="https://netknights.it/leistungen/service-level-agreements/">a subscription file</a> 
+	is mandatory to enroll tokens in privacyIDEA. 
+	You can get	
+<a href="https://netknights.it/en/unternehmen/kontakt/">demo subscriptions files
+	from NetKnights GmbH for testing.</a>
+</p>
 <b>Features</b>
 <ul>
 	<li>User Registration: A user may register himself and thus create his new user account.</li>
