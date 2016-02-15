@@ -2,6 +2,8 @@
 #
 # (c) Cornelius Kölbel, NetKnights GmbH
 #
+# 2016-92-15 Cornelius Kölbel, <cornelius.koelbel@netknights.it>
+#            Add expiration date
 # 2015-04-17 Cornelius Kölbel, <cornelius.koelbel@netknights.it>
 #            Initial writeup
 #
@@ -20,6 +22,7 @@ import yaml
 from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA
 import traceback
+import datetime
 
 
 log = logging.getLogger(__name__)
@@ -37,12 +40,13 @@ def check_subscription(request, action):
     subscription_count = subscription.get("subscription")
 
     # The subscription_count==0 means unlimited users
-    if subscription_count > 10 or subscription_count == 0:
+    if subscription_count >= 0:
         check_signature(subscription)
 
     if subscription_count != 0 and token_count >= subscription_count:
             raise TokenAdminError("Subscription limit exceeded. You are only "
-                                  "entitled to assign %s tokens to users" %
+                                  "entitled to assign %s tokens to users."
+                                  " Please contact NetKnights for a subscription!" %
                                   subscription_count, id=34131)
 
 
@@ -51,8 +55,8 @@ def get_subscription():
     Returns the license from the Config database
     """
     DEFAULT_SUB = """{'systemid': 'unknown',
-                      'customername': 'Free for up to ten assigned tokens',
-                      'subscription': 10,
+                      'customername': 'Not registered',
+                      'subscription': -1,
                       'supportlevel': 'No Support',
                       'expires': 'never',
                       'signature': None}"""
@@ -89,6 +93,17 @@ GW0yofQJjWecUHwBkZlawBz0lJBKDQObtUsjHB80VTnPGTcs4KYH+if8UHoR6Aug
     if r is False:
         raise ConfigAdminError("This is no valid subscription file. Invalid "
                                "signature.", id=133)
+
+    # check the expiration date
+    if subscription.get("expires") != "never":
+        date_now = datetime.datetime.utcnow()
+        date_exp = datetime.datetime.strptime(subscription.get("expires"),
+                                              "%Y-%m-%d")
+        if date_now > date_exp:
+            raise ConfigAdminError("Your subscription has expired. Please "
+                                   "contact NetKnights for a new "
+                                   "subscription!", id=134)
+    
     return True
 
 
