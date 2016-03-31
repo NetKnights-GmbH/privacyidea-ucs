@@ -1,3 +1,36 @@
+<p>Änderungen in Version 2.11</p>
+<b>Neue Funktionalitäten</b>
+  <ul>
+  <li> RADIUS Server können zentral definiert werden.</li>
+  <li> RADIUS passthru Richtlinie: Authentifizierungsanfragen
+    können an externe RADIUS-Server weitergeleitet werden.</li>
+</ul>
+
+<b>Erweiterungen</b>
+<ul>
+  <li> Im LDAP-Resolver (Active Directory) kann nun die 
+    objectGUID verwendet werden.</li>
+  <li> Sonderzeichen in Benutzername und Passwort im LDAP-
+    Resolver.</li>
+  <li> LDAP-Suche erfolgt nun Seitenweise. Dies ermöglicht es,
+    dass mehr als 1000 Benutzer auf einmal gefunden werden können.</li>
+  <li> privacyIDEA Instanz-Name kann für das Audit Log 
+    konfiguriert werden.</li>
+  <li> Beliebige Attribute können in der SAML-Antwort eingefügt
+    werden.</li>
+  <li> Die Yubico API für die YUBICO mode token wurde verbessert.</li>
+</ul>
+
+<b>Fehlerbehebungen</b>
+<ul>
+  <li> Problem bei SMTP Authentifizierung behoben</li>
+  <li> Enrollment Wizard für Benutzer, die nicht im Default-Realm sind</li>
+  <li> Registrierungsprozess: Wenn eine Email nicht zugestellt werden
+    kann, wird der Benutzer und der Token nicht angelegt.</li>
+</ul>
+
+
+
 <p>Änderungen in Version 2.10</p>
 <b>Subskriptionen</b>
 <p>
