@@ -1,3 +1,39 @@
+<p>Änderungen in Version 2.12.1</p>
+<b>Neue Funktionen<b>
+<ul>
+<li>Event Handler Framework.</li>
+<li>Zertifikate können als PKCS12 heruntergeladen werden.
+Benutzer in LDAP Verzeichnissen können aus privacyIDEA heraus angelegt und bearbeitet werden.</li>
+<li>Untersützung für Hardware-Sicherheits-Module.</li>
+<li>Zeitabhängige Richtlinien.</li>
+</ul>
+
+<b>Erweiterungen</b>
+<ul>
+<li>UI: Richtlinie für den Enrollment-Wizard hinzugefügt.</li>
+<li>UI: Auswahlbox für den Realm beim Login.</li>
+<li>TOTP QR Code verbessert.</li>
+<li>Enrollment-Wizard dokumentiert.</li>
+<li>pi-manage backup Skript unterstützt nun pymysql.</li>
+<li>X-Forwarded-For HTTP header wird als Client IP verwendet.</li>
+<li>Meta-Paket privacyidea-mysql erlaubt flexiblere Installation.</li>
+</ul>
+
+<b>Fehlerbehebungen</b>
+<ul>
+<li>Adduser beachtet nun die Resolver-Einstellung in Richtlinien #403.</li>
+<li>Dokumentation zum SPASS token #399.</li>
+<li>Enrollment Menü wird nicht angezeigt, wenn Benutzer keine Token ausrollen dürfen #398.</li>
+<li>Fehler getSerial für TOTP Token behoben #393.</li>
+<li>Verhalten der System-Konfiguration Checkboxen korrigiert #378.</li><li>
+Manage Tokenrealms: Ein Realm kann nun von einem Token entfernt werden #363.</li>
+<li>Bessere Datumsanzeige in Emails #352.</li>
+<li>Versandt von Test-Emails verbessert #350.</li>
+<li>Authentisierung mit einem aktiven Token ist nun möglich, wenn der Benutzer einen deaktivierten Token hat #339.</li>
+<li>Passwörter können im Log im Debug Modus ein- oder ausgeblendet werden.</li>
+<li>Fehler im HOTP auto-resync behoben.</li>
+</ul>
+
 <p>Änderungen in Version 2.11</p>
 <b>Neue Funktionalitäten</b>
   <ul>

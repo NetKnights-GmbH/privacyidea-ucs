@@ -1,3 +1,43 @@
+<p>ChangeLog for Version 2.12.1</p>
+<b>Features<b>
+<ul>
+<li>Event Handler Framework #360</li>
+<li>local CA connector can enroll certificates
+    for users. Users can download PKCS12 file. #383</li>
+<li>Add and edit users in LDAP resolvers #372</li>
+<li>Hardware Security Module support via PKCS11</li>
+<li>Time dependent policies #358</li>
+</ul>
+
+<b>Enhancements</b>
+<ul>
+<li>Policy for web UI enrollment wizard #402</li>
+<li>Realm dropdown box at login screen #400</li>
+<li>Apply user policy settings #390</li>
+<li>Improve QR Code for TOTP token enrollment #384</li>
+<li>Add documentation for enrollment wizard #381</li>
+<li>Improve pi-manage backup to use pymysql #375</li>
+<li>Use X-Forwarded-For HTTP header as client IP #356</li>
+<li>Add meta-package privacyidea-mysql #376</li>
+</ul>
+
+<b>Fixes</b>
+<ul>
+<li>Adduser honors resolver setting in policy #403</li>
+<li>Add documentation for SPASS token #399</li>
+<li>Hide enrollment link (WebUI) is user can not enroll #398</li>
+<li>Fix getSerial for TOTP tokens #393</li>
+<li>Fix system config checkboxes #378</li>
+<li>Allow a realm to be remove from a token #363</li>
+<li>Improve the date handling in emails #352</li>
+<li>Sending test emails #350</li>
+<li>Authentication with active token not possible if
+    the user has a disabled token #339</li>
+<li>Configure if passwords are logged in Debug mode</li>
+<li>Fix HOTP auto-resync</li>
+</ul>
+
+
 <p>ChangeLog for Version 2.11</p>
 <b>Features</b>
 <ul>
