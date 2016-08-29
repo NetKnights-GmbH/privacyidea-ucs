@@ -1,3 +1,40 @@
+<p>Änderungen in Version 2.13</p>
+
+<p><strong>Features</strong></p>
+<blockquote>
+<ul>
+<li>Zentral definierte SMS Gateways zur Verwendung mit SMS Token. #392</li>
+<li>SMS Gateways für Benutzerbenachrichtigungen aus dem Eventhandler Framework. #435</li>
+<li>PIN-Änderungen können mittels Richtlinie erzwungen werden. #429</li>
+<li>PIN-Änderung am WebUI kann erzwungen werden. #432</li>
+</ul>
+</blockquote>
+<p><strong>Enhancements</strong></p>
+<blockquote>
+<ul>
+<li>Verbesserung der Geschwindigkeit
+<ul>
+<li>beim Laden der Audit Logs im Web UI.</li>
+</ul>
+* beim Laden der Token Ansicht im Web UI. #436</li>
+<li>Zusätzlicher Loglevel, der es erlaubt auch Passwörter ins Audit-Log zu schreiben</li>
+<li>Neues Logo! #430</li>
+<li>Schneller Zugriff auf manche Funktionen in der Tokenliste: Failcounter zurücksetzen, Aktive/Inaktiv umschalten. #426</li>
+<li>REST API gibt die OTP-Länge bei erfolgreicher Authentifizierung zurück. #407</li>
+<li>Spezielle Proxies dürfen die Client-Informationen (IP) verändern. #395</li>
+</ul>
+</blockquote>
+<p><strong>Fixes</strong></p>
+<blockquote>
+<ul>
+<li>Tokenanzahl im Web UI anzeigen. #437</li>
+<li>Richtigen default Tokentyp verwenden. #427</li>
+<li>Fehler beim Resync von HOTP behoben. #412</li>
+</ul>
+</blockquote>
+
+
+
 <p>Änderungen in Version 2.12.1</p>
 <b>Neue Funktionen<b>
 <ul>

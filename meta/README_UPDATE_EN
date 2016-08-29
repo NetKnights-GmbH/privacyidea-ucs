@@ -1,3 +1,39 @@
+<p>ChangeLog for Version 2.13</p>
+
+<b>Features</b>
+<ul>
+<li>Allow central definition of SMS gateways 
+    to be used with tokens. #392</li>
+<li>User SMS for User Notificaton Event Handler. #435</li>
+<li>Add PIN change setting for each token. #429</li>
+<li>Force PIN change in web UI. #432</li>
+</ul>
+
+<b>Enhancements</b>
+<ul>
+<li> Performence enhancements
+	<ul>
+   <li>speed up loading of audit log in web UI.</li>
+   <li>avoid double loadin of tokens and audit entries in web UI. #436</li>
+	</ul>
+</li>
+<li>Additional log level (enhanced Debug) to even log passwords in 
+    debug mode.</li>
+<li>Add new logo. #430</li>
+<li> Add quick actions in the token list: reset failcounter, 
+    toggle active. #426</li>
+<li> REST API returns OTP length on successful authentication. #407</li>
+<li> Add intelligent OverrideAuthorizationClient system setting,
+    that allows defined proxies to reset the client IP. #395</li>
+</ul>
+
+<b>Fixes</b>
+<ul>
+<li> Display token count in web UI. #437</li>
+<li> Use correct default_tokentype in token enrollment. #427</li>
+<li> Fix HOTP resync problems. #412</li>
+</ul>
+
 <p>ChangeLog for Version 2.12.1</p>
 <b>Features<b>
 <ul>
