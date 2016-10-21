@@ -1,3 +1,30 @@
+<p>ChangeLog for Version 2.15</p>
+<b>Features</b>
+<ul>
+<li>Client Overview.</li>
+<li>Display the type of the requesting   authenticating clients (#489)</li>
+<li>Support for NitroKey OTP mode (admin client)</li>
+</ul>
+
+<b>Enhancements</b>
+<ul>
+<li>You can edit arbitrary user attributes in privacyIDEA.
+Such user attributes can be mapped to any RADIUS attribute.</li>
+<li>
+Performance enhancements using Caching singletons for Config, Realm, Resolver and Policies</li>
+<li>Allow configuration of the registration email text (#494)</li>
+<li>Return SAML attributes only in case of successful authentication (#500)</li>
+<li>Policy “reset_all_user_tokens” allow to reset all  failcounters on successful authentication (#471)</li>
+<li>Client rewrite mapping also checks for X-Forwarded-For (#395, #495)<l/li>
+</ul>
+
+<b>Fixes</b>
+<ul>
+<li>Fixing RemoteUser fails to display WebUI (#499)</li>
+<li>String comparison in HOSTS resolver (#484)</li>
+</ul>
+
+
 <p>ChangeLog for Version 2.14</p>
 <b>Features</b>
 <ul>

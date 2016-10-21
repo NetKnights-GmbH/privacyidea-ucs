@@ -1,3 +1,9 @@
+privacyidea-ucs (2.15-1) wheezy; urgency=low
+
+  * Update to 2.15
+
+ -- NetKnights GmbH <info@netknights.it>  Fri, 21 Oct 2016 09:30:00 +0200
+ 
 privacyidea-ucs (2.14-1) wheezy; urgency=low
 
   * Update to 2.14

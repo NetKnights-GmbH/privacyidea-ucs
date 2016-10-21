@@ -1,3 +1,12 @@
+<p>Änderungen in Version 2.15</p>
+
+<b>Features</>
+<ul>
+  <li>Unterstützung des Nitrokey als OTP Token.</li>
+  <li>Verbesserte Integration in Firewalls und VPN durch flexible Benutzerattribute.</li>
+</ul>
+
+
 <p>Änderungen in Version 2.14</p>
 <b>Features</b>
 <ul>
