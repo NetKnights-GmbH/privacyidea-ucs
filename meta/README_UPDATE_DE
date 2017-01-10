@@ -1,3 +1,32 @@
+<p>Änderungen in Version 2.17</p>
+<h4>Funktionen</h4>
+<ul>
+ 	<li>Token Handler zum gezielten, automatischen Ausführen von Token-Aktionen. (#532)</li>
+ 	<li>Script Hander zum Ausführen von Shell-Skripten. (#536)</li>
+ 	<li>Zusätzliche Challenge Response REST API für leichteren SMS-Versand. (#531)</li>
+ 	<li>Erweiterte Richtlinien mit sekundärem Benutzer-Resolver. (#543)</li>
+</ul>
+<h4>Erweiterungen</h4>
+<ul>
+ 	<li>In den Bedingungen der Event Handler wird eine Seriennummer bestimmt, selbst wenn der Request keine Seriennummer enthält. Dies gilt für Benutzer, die nur einen Token haben. (#571)</li>
+ 	<li>Event Handler Definitionen können deaktiviert werden. (#537)</li>
+ 	<li>Event Handler Definitionen können einen beschreibenden Namen erhalten. (#522)</li>
+ 	<li>LDAP Performanz verbessert. Es wird auf unterschiedliche Funktionalitäten des ldap3 Moduls in den Versionen 1.x und 2.x eingegangen. (#549)</li>
+ 	<li>SQL Audit Tabelle wurde zum Schema hinzugefügt. Dadurch eine Leistungssteigerung, weil die Tabelle nicht mehr bei einem Request erzeugt wird. (#557)</li>
+ 	<li>Alter der Audit-Einträge kann festgelegt werden. Benutzer können bspw. nur Einträge des letzten Monats sehen. (#541)</li>
+ 	<li>Verbesserung der Lesbarkeit von Richtlinien-Details. Es wurde eine Checkbox ergänzt, die nur angewählte Aktionen zeigt. (#573)</li>
+ 	<li>Audit Log kann auch gefiltert heruntergeladen werden. (#539)</li>
+</ul>
+<h4>Fehlerbehebungen</h4>
+<ul>
+ 	<li>Beim Löschen eines Tokens wird nun auch die bisher fehlende Seriennummer des Tokens ins Audit Log geschrieben. (#546)</li>
+ 	<li>Fehler beim Speichern von Event Handlern behoben. (#551)</li>
+ 	<li>HttpSMSProvider akzeptiert nun Status Codes 201 und 202 zusätzlich zu 200. (#562)</li>
+ 	<li>Fehler mit der Checkbox NOREFERRALS im LDAP Resolver behoben. (#563)</li>
+ 	<li>Dokumentation für SMS Provider ergänzt. (#566)</li>
+ 	<li>HTTP 301 Redirects aus dem WebUI entfernt. (#576)</li>
+</ul>
+
 <p>Änderungen in Version 2.16</p>
 <b>Features</b>
 <ul>
