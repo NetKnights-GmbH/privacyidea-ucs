@@ -1,3 +1,32 @@
+<p>ChangeLog for Version 2.16</p>
+
+<b>Featurs</b>
+<ul>
+	<li>Add HSM support via AES keys (#534)</li>
+	<li>Improved Event Handler for flexible notification (#511)</li>
+	<li> Signed subscription files for adding and checking
+	for extra functionality during authentication request (#502)</li>
+</ul>
+
+<b>Enhancements</b>
+<ul>
+  <li>Allow additional filter attributes in the Audit Log (#519)</li>
+  <li>Show or hide realms in the login dialog via policy (#517)</li>
+  <li> Improve UI if admin is not allowed for certain actions (#516, #512)</li>
+  <li> Disable OTP PIN during enrollment via policy (#439)</li>
+  <li> Allow automatic sending of registration code via email (#514)</li>
+</ul>
+
+<b>Fixes</b>
+<ul>
+  <li> Allow compatibility with ldap3 >= 2.0.7 (#533 #535)</li>
+  <li> Fix problem with Notification when no tokenowner is available (#528)</li>
+  <li> Fix confusion of client HTTP parameters (#529)</li>
+  <li> Fix enabled flag with certain database types (#527)</li>
+  <li> Catch error in case of faulty overrideClient definition (#526)</li>
+  <li> Truncate Audit lines, that are too long for the DB table (#525)</li>
+</ul>
+
 <p>ChangeLog for Version 2.15</p>
 <b>Features</b>
 <ul>

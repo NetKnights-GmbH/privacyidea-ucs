@@ -1,3 +1,22 @@
+<p>Änderungen in Version 2.16</p>
+<b>Features</b>
+<ul>
+        <li>HSM Unterstützung für AES-Schlüssel.</li>
+        <li>Notification Handler: Funktionalität erweitert.</li>
+        <li>Signierte Subskriptionsdateien für erweitertert Funktionalitäten 
+		wie privacyIDEA Credential Provider und ownCloud App.</li>
+</ul>
+
+<b>Erweiterungen></b>
+<ul>
+  <li>Filter-Attribute im Audit-Log.</li>
+  <li>Realm-Dialog im WebUI-Login anzeigen.</li>
+  <li>Admin-Funktionen ausblenden, wenn der Administrator keine Berechtigungen hat.</li>
+  <li>Automatischer Versandt des Registrierungscodes via Email.</li>
+</ul>
+
+
+
 <p>Änderungen in Version 2.15</p>
 
 <b>Features</>
