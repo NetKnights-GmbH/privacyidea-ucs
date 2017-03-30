@@ -1,452 +1,67 @@
-<p>Änderungen in Version 2.17</p>
-<h4>Funktionen</h4>
-<ul>
- 	<li>Token Handler zum gezielten, automatischen Ausführen von Token-Aktionen. (#532)</li>
- 	<li>Script Hander zum Ausführen von Shell-Skripten. (#536)</li>
- 	<li>Zusätzliche Challenge Response REST API für leichteren SMS-Versand. (#531)</li>
- 	<li>Erweiterte Richtlinien mit sekundärem Benutzer-Resolver. (#543)</li>
-</ul>
-<h4>Erweiterungen</h4>
-<ul>
- 	<li>In den Bedingungen der Event Handler wird eine Seriennummer bestimmt, selbst wenn der Request keine Seriennummer enthält. Dies gilt für Benutzer, die nur einen Token haben. (#571)</li>
- 	<li>Event Handler Definitionen können deaktiviert werden. (#537)</li>
- 	<li>Event Handler Definitionen können einen beschreibenden Namen erhalten. (#522)</li>
- 	<li>LDAP Performanz verbessert. Es wird auf unterschiedliche Funktionalitäten des ldap3 Moduls in den Versionen 1.x und 2.x eingegangen. (#549)</li>
- 	<li>SQL Audit Tabelle wurde zum Schema hinzugefügt. Dadurch eine Leistungssteigerung, weil die Tabelle nicht mehr bei einem Request erzeugt wird. (#557)</li>
- 	<li>Alter der Audit-Einträge kann festgelegt werden. Benutzer können bspw. nur Einträge des letzten Monats sehen. (#541)</li>
- 	<li>Verbesserung der Lesbarkeit von Richtlinien-Details. Es wurde eine Checkbox ergänzt, die nur angewählte Aktionen zeigt. (#573)</li>
- 	<li>Audit Log kann auch gefiltert heruntergeladen werden. (#539)</li>
-</ul>
-<h4>Fehlerbehebungen</h4>
-<ul>
- 	<li>Beim Löschen eines Tokens wird nun auch die bisher fehlende Seriennummer des Tokens ins Audit Log geschrieben. (#546)</li>
- 	<li>Fehler beim Speichern von Event Handlern behoben. (#551)</li>
- 	<li>HttpSMSProvider akzeptiert nun Status Codes 201 und 202 zusätzlich zu 200. (#562)</li>
- 	<li>Fehler mit der Checkbox NOREFERRALS im LDAP Resolver behoben. (#563)</li>
- 	<li>Dokumentation für SMS Provider ergänzt. (#566)</li>
- 	<li>HTTP 301 Redirects aus dem WebUI entfernt. (#576)</li>
-</ul>
-
-<p>Änderungen in Version 2.16</p>
-<b>Features</b>
-<ul>
-        <li>HSM Unterstützung für AES-Schlüssel.</li>
-        <li>Notification Handler: Funktionalität erweitert.</li>
-        <li>Signierte Subskriptionsdateien für erweitertert Funktionalitäten 
-		wie privacyIDEA Credential Provider und ownCloud App.</li>
-</ul>
-
-<b>Erweiterungen></b>
-<ul>
-  <li>Filter-Attribute im Audit-Log.</li>
-  <li>Realm-Dialog im WebUI-Login anzeigen.</li>
-  <li>Admin-Funktionen ausblenden, wenn der Administrator keine Berechtigungen hat.</li>
-  <li>Automatischer Versandt des Registrierungscodes via Email.</li>
-</ul>
-
-
-
-<p>Änderungen in Version 2.15</p>
-
-<b>Features</>
-<ul>
-  <li>Unterstützung des Nitrokey als OTP Token.</li>
-  <li>Verbesserte Integration in Firewalls und VPN durch flexible Benutzerattribute.</li>
-</ul>
-
-
-<p>Änderungen in Version 2.14</p>
-<b>Features</b>
-<ul>
-  <li> Import PGP encrypted seed files</li>
-  <li> Allow UserNotification for user actions</li>
-  <li> Allow UserNotification on validate/check events,
-    to notify the user on a failed authentication or
-    a locked token.</li>
-</ul>
-
-<b>Enhancements</b>
-<ul>
-  <li> Add thread ID in REST API Response</li>
-  <li> Performance improvement: Cache LDAP Requests #473</li>
-  <li> Performance improvement: Optimize resolver iteration #474</li>
-  <li> Add "Check OTP only" in WebUI</li>
-  <li> Improve "get serial by OTP" in WebUI</li>
-  <li> Add script to get serial by OTP</li>
-</ul>
-
-<b>Fixes</b>
-<ul>
- <li> Restrict GET /user for corresponding admins #460</li>
-</ul>
-
-
-
-
-
-<p>Änderungen in Version 2.13</p>
-
-<p><strong>Features</strong></p>
+<h1 id="version-2.18.1">Version 2.18.1</h1>
+<h2 id="features">Features</h2>
 <blockquote>
 <ul>
-<li>Zentral definierte SMS Gateways zur Verwendung mit SMS Token. #392</li>
-<li>SMS Gateways für Benutzerbenachrichtigungen aus dem Eventhandler Framework. #435</li>
-<li>PIN-Änderungen können mittels Richtlinie erzwungen werden. #429</li>
-<li>PIN-Änderung am WebUI kann erzwungen werden. #432</li>
+<li>Allow to disable the WebUI (#605)</li>
+<li>The WebUI will lock the screen after a timeout instead of logging out the user. This allows to easily continue configuration work. (#621)</li>
+<li>Improve the creation and handling of local CAs (#630, #632, #633) Allow certificate template for certificates with different runtime and x509v3 extensions.</li>
 </ul>
 </blockquote>
-<p><strong>Enhancements</strong></p>
+<h2 id="enhancements">Enhancements</h2>
+<blockquote>
+<p>Enhancements in Policies:</p>
+<ul>
+<li>Allow regular expressions in usernames in policies. (#581)</li>
+<li>Improve Policy creation with pi-manage from JSON formatted file.</li>
+<li>WebUI: Add action grouping in policies.</li>
+<li>WebUI: Add action filter in policy view.</li>
+<li>Allow token specific PIN policies: The SPASS token can now have dedicated PIN policies.</li>
+<li>Add PIN policies for administrators during enrollment and during assignment.</li>
+<li>Add WebUI policy: only search on enter being pressed (#617)</li>
+</ul>
+<p>Enhancements in Event Handlers:</p>
+<ul>
+<li>Add token_validity_period condition to event handlers. (#618)</li>
+<li>Add additional options in token handler when creating SMS, Email or mOTP tokens.</li>
+<li>Allow tokenhandler to set tokeninfo field.</li>
+<li>Allow tokenhandler to set syncwindow.</li>
+<li>Add event handler condition for count_auth_success and cound_auth_fail</li>
+<li>Add event handler condition for last_auth.</li>
+<li>Improve Audit Log for Event Handler. Each triggered action will now also create an audit entry. (#609)</li>
+<li>Allow the use of {current_time} in tokenevent handler. (#628)</li>
+</ul>
+<p>Enhancements in LDAP Resolver:</p>
+<ul>
+<li>Upgrade dependency to ldap3 version &gt;=2.1.1 to improve LDAP performance in regards to redundancy and security</li>
+<li>LDAP Resolver: Use get_info in bind requests to avoid querying of subschema. (#585)</li>
+<li>LDAP Resolver: Support StartTLS over Port 389.</li>
+<li>Simplify LDAP Resolver: Remove username from Attribute Mapping.</li>
+<li>Simplefy LDAP Resolver: Remove reverse filter.</li>
+</ul>
+<p>Misc Enhancements:</p>
+<ul>
+<li>Automatically add user's mobile number if tokentype is SMS.</li>
+<li>Add example configuration for GTX messaging SMS gateway.</li>
+<li>Add a script &quot;privacyidea-get-unused-tokens&quot; to find unused tokens</li>
+<li>WebUI: Add a busy indicator spinner.</li>
+<li>Improve the pi-manage script in regards to backup and restore. Let you choose whether to backup encryption key or not. Better handling for individual pathes. (#626, #623)</li>
+</ul>
+</blockquote>
+<h2 id="fixes">Fixes</h2>
 <blockquote>
 <ul>
-<li>Verbesserung der Geschwindigkeit
-<ul>
-<li>beim Laden der Audit Logs im Web UI.</li>
-</ul>
-* beim Laden der Token Ansicht im Web UI. #436</li>
-<li>Zusätzlicher Loglevel, der es erlaubt auch Passwörter ins Audit-Log zu schreiben</li>
-<li>Neues Logo! #430</li>
-<li>Schneller Zugriff auf manche Funktionen in der Tokenliste: Failcounter zurücksetzen, Aktive/Inaktiv umschalten. #426</li>
-<li>REST API gibt die OTP-Länge bei erfolgreicher Authentifizierung zurück. #407</li>
-<li>Spezielle Proxies dürfen die Client-Informationen (IP) verändern. #395</li>
-</ul>
-</blockquote>
-<p><strong>Fixes</strong></p>
-<blockquote>
-<ul>
-<li>Tokenanzahl im Web UI anzeigen. #437</li>
-<li>Richtigen default Tokentyp verwenden. #427</li>
-<li>Fehler beim Resync von HOTP behoben. #412</li>
+<li>LDAP Resolver: Verify SSL Certificate (Security)</li>
+<li>LDAP Resolver: Allow special characters in NTLM password</li>
+<li>LDAP Resolver: Allow searching for users with German umlaut</li>
+<li>Remove the &quot;unsafe&quot; notation in the QR-Code link, so that a smartphone may import the key during HOTP/TOTP token enrollment by clicking the link. (#620)</li>
+<li>Use defusexml to avoid XML bombs on token import (Security)</li>
+<li>Replace eval with ast.literal_evel (Security)</li>
+<li>Add missing attributes for U2F tokens in validate/triggerchallenge API</li>
+<li>Let /validate/triggerchallenge write to audit log.</li>
+<li>Fix mangle policy for users and realms</li>
+<li>Avoid logging of password in check_user_pass in debug level (level=10)</li>
+<li>Set encrypted PIN on enrollment for certificate tokens (#625)</li>
+<li>Remove unused policy action &quot;motp_webprovision&quot;</li>
+<li>Allow emailtext policy in triggerchallenge API (#642)</li>
 </ul>
 </blockquote>
-
-
-
-<p>Änderungen in Version 2.12.1</p>
-<b>Neue Funktionen<b>
-<ul>
-<li>Event Handler Framework.</li>
-<li>Zertifikate können als PKCS12 heruntergeladen werden.
-Benutzer in LDAP Verzeichnissen können aus privacyIDEA heraus angelegt und bearbeitet werden.</li>
-<li>Untersützung für Hardware-Sicherheits-Module.</li>
-<li>Zeitabhängige Richtlinien.</li>
-</ul>
-
-<b>Erweiterungen</b>
-<ul>
-<li>UI: Richtlinie für den Enrollment-Wizard hinzugefügt.</li>
-<li>UI: Auswahlbox für den Realm beim Login.</li>
-<li>TOTP QR Code verbessert.</li>
-<li>Enrollment-Wizard dokumentiert.</li>
-<li>pi-manage backup Skript unterstützt nun pymysql.</li>
-<li>X-Forwarded-For HTTP header wird als Client IP verwendet.</li>
-<li>Meta-Paket privacyidea-mysql erlaubt flexiblere Installation.</li>
-</ul>
-
-<b>Fehlerbehebungen</b>
-<ul>
-<li>Adduser beachtet nun die Resolver-Einstellung in Richtlinien #403.</li>
-<li>Dokumentation zum SPASS token #399.</li>
-<li>Enrollment Menü wird nicht angezeigt, wenn Benutzer keine Token ausrollen dürfen #398.</li>
-<li>Fehler getSerial für TOTP Token behoben #393.</li>
-<li>Verhalten der System-Konfiguration Checkboxen korrigiert #378.</li><li>
-Manage Tokenrealms: Ein Realm kann nun von einem Token entfernt werden #363.</li>
-<li>Bessere Datumsanzeige in Emails #352.</li>
-<li>Versandt von Test-Emails verbessert #350.</li>
-<li>Authentisierung mit einem aktiven Token ist nun möglich, wenn der Benutzer einen deaktivierten Token hat #339.</li>
-<li>Passwörter können im Log im Debug Modus ein- oder ausgeblendet werden.</li>
-<li>Fehler im HOTP auto-resync behoben.</li>
-</ul>
-
-<p>Änderungen in Version 2.11</p>
-<b>Neue Funktionalitäten</b>
-  <ul>
-  <li> RADIUS Server können zentral definiert werden.</li>
-  <li> RADIUS passthru Richtlinie: Authentifizierungsanfragen
-    können an externe RADIUS-Server weitergeleitet werden.</li>
-</ul>
-
-<b>Erweiterungen</b>
-<ul>
-  <li> Im LDAP-Resolver (Active Directory) kann nun die 
-    objectGUID verwendet werden.</li>
-  <li> Sonderzeichen in Benutzername und Passwort im LDAP-
-    Resolver.</li>
-  <li> LDAP-Suche erfolgt nun Seitenweise. Dies ermöglicht es,
-    dass mehr als 1000 Benutzer auf einmal gefunden werden können.</li>
-  <li> privacyIDEA Instanz-Name kann für das Audit Log 
-    konfiguriert werden.</li>
-  <li> Beliebige Attribute können in der SAML-Antwort eingefügt
-    werden.</li>
-  <li> Die Yubico API für die YUBICO mode token wurde verbessert.</li>
-</ul>
-
-<b>Fehlerbehebungen</b>
-<ul>
-  <li> Problem bei SMTP Authentifizierung behoben</li>
-  <li> Enrollment Wizard für Benutzer, die nicht im Default-Realm sind</li>
-  <li> Registrierungsprozess: Wenn eine Email nicht zugestellt werden
-    kann, wird der Benutzer und der Token nicht angelegt.</li>
-</ul>
-
-
-
-<p>Änderungen in Version 2.10</p>
-<b>Subskriptionen</b>
-<p>
-Beginnend mit Version 2.10 ist eine 
-<a href="https://netknights.it/leistungen/service-level-agreements/">Subskriptions-Datei</a>    
-        zwingend erforderlich. Bei der
-<a href="https://netknights.it/unternehmen/kontakt/">NetKnights 
-        GmbH können Sie außerdem Demo-Subskriptionen</a> erhalten.
-</p>
-<b>Neue Funktionalitäten</b>
-<ul>
-	<li>Benutzer-Registrierung: Ein Benutzer kann sich selber registrieren und somit für sich einen neuen Account erzeugen.</li>
-	<li>Passwort-Reset: Mit Hilfe eines Recovery Tokens kann der Benutzer sein Passwort zurücksetzen, ohne den Administrator oder den Helpdesk behelligen zu müssen.</li>
-	<li>Token Enrollment Wizard zum einfachen und kostensparenden Ausrollen durch den Benutzer selbst.</li>
-	<li>SMTP Server: Der Administrator kann eine oder mehrere Email-Server-Konfigurationen zentral definieren, um diese dann an verschiedenen Stellen in privacyIDEA zu nutzen:
-<ul>
-	<li>Email Token,</li>
-	<li>SMTP SMS Provider,</li>
-	<li>Registrierungsprozess,</li>
-	<li>Passwort-Reset.</li>
-</ul>
-</li>
-</ul>
-<b>Erweiterungen</b>
-<ul>
-	<li>Einfacheres Rollout von Smartphone Apps für HOTP und TOTP. Es werden OTP-Länge, Hash und Timestep in der UI nicht angezeigt, wenn entsprechende Richtlinien definiert sind.</li>
-	<li>Import von Aladdin/SafeNet XML Dateien.</li>
-	<li>Import von PSKC-Dateien (mit Passwort verschlüsselt)</li>
-	<li>Import von PSKC-Dateien (mit AES-Key verschlüsselt)</li>
-</ul>
-<b>Fehlerbehebungen</b>
-<ul>
-	<li>Support LDAP passwords with special non-ascii characters.</li>
-	<li>Support LDAP BIND with special non-ascii characters.</li>
-	<li>Fix problem with encrypted encryption key.</li>
-	<li>Fix upgrading DB Schema for postgresql+psycopg2.</li>
-	<li>Fix UI displaying of saved SMS Provider.</li>
-	<li>Do not start challenge response with a locked/disabled token.</li>
-</ul>
-
-<p>
-Änderungen in Version 2.9
-</p>
-<b>Neue Funktionalitäten</b>
-<ul>
-<li>Neuer Tokentyp: Sicherheitsfragen.</li>
-<li>Neuer Tokentyp: Papier-Token oder TAN-Listen.</li>
-<li>Yubico Validation Protokoll: Yubikeys können gegen /ttype/yubikey authentifiziert
-   werden. Dies entspricht dem Yubico Validation Protokoll. Somit können alle Yubico clients
-   verwendet werden.</li>
-</ul>
-
-<b>Erweiterungen</b>
-<ul>
-	<li>Im WebUI können die aktiven Challenges der Challenge-Response-Token
-angesehen werden.</li>
-	<li>Beim Ausrollen eines Google Authenticators kann eine Policy mit dem "Issuer" gesetzt werden.</li>
-	<li>Der LDAP Maschinen-Resolver nutzt nun auch ein LDAP Server-Pool.</li>
-	<li>Der LDAP-Resolver liefert eine Liste von Handy-Nummern zurück. Aus dieser kann beim Ausrollen eines SMS-Token eine Nummer
-ausgewählt werden.</li>
-</ul>
-
-<b>Fehlerbehebungen</b>
-<ul>
-	<li>Die Test-Email des Email-Tokens enthält nun auch ein Datum.</li>
-	<li>Problem mit dem verschlüsselten Verschlüsselungskey behoben.</li>
-	<li>Problem mit Großbuchstaben behoben, wenn man sich am UI mit REMOTE_USER anmeldet.</li>
-	<li>Im WebUI kann nun eine leere PIN gesetzt werden.</li>
-	<li>Problem beim Import von Token-Dateien wurde behoben.</li>
-</ul>
-
-
-<p>
-Änderungen in Version 2.8.1
-</p>
-<b>Neue Funktionalitäten</b>
-<ul>
-  <li>Die U2F-Unterstütung wurde verbessert. Trusted Facets.</li>
-  <li>Challenge Response und U2F für SAML wurden hinzugefügt.</li>
-  <li>Das WebUI unterstützt nun Themes.</li>
-  <li>Am WebUI kann man sich mit HTTP Basic Auth und REMOTE_USER anmelden.</li>
-  <li> Fuzzy Authentication: Zeit und Anzahl der Authentisierungsversuche können beschränkt werden.</li>
-</ul>
-
-<b>Erweiterungen</b>
-<ul>
-  <li> Die "Mangle" Richtlinie kann nun auch für SSH Keys angewendet werden.</li>
-  <li> Das ownCloud plugin unterstützt nun Realms.</li>
-  <li> Der SQLResolver unterstützt nun Drupal Passwörter. </li>
-  <li> Während des Rollouts des Tokens kann der Gültigkeitszeitraum angegeben werden.</li>
-  <li> Der Standard-Typ des auszurollenden Tokens im WebUI kann angegeben werden.</li>
-  <li> Der LDAP-Resolver unterstützt nun LDAP Scopes.</li>
-</ul>
-
-<b>Fehlerbehebungen</b>
-<ul>
-  <li> Failcounter wird nun für Challenge Response Token korrekt zurückgesetzt.</li>
-  <li> Die Fehlermeldungen beim Update über existierende Tabellenspalten werden nicht mehr ausgegeben.</li>
-  <li> Die TLS Checkbox bei den Einstellungen für den Email Token wird nun korrekt gespeichert.</li>
-  <li> Der TOTP Token kann im WebUI nun wieder korrekt getestet werden.</li>
-  <li> Die SMS Token Konfiguration wird im WebUI korrekt geladen.</li>
-  <li> Login-Problem bei der Nutzung von verschlüsselten Verschlüsselungskeys wurde behoben.</li>
-  <li> Das Anmelden am WebUI mit großgeschriebenen Realms bei der Nutzung von REMOTE_USER funktioniert.</li>
-  <li> Die PIN kann durch Eingabe einer leeren PIN im WebUI zurückgesetzt werden.</li>
-  <li> Der Import von Tokendateien ins WebUI wurde korrigiert.</li>
-</ul>
-
-
-<p>
-Änderungen in Version 2.7
-</p>
-<b>Neue Funktionalitäten</b>
-<ul>
-  <li>Unterstützung für U2F Token wie den Yubikey U2F.</li>
-  <li>Die API beinhaltet nun eine digitale Signature, so dass der Client die Authentizität 
-	überprüfen kann.</li>
-</ul>
-<b>Erweiterungen</b>
-<ul>
-  <li>Beim Token-Import kann direkt ein Realm ausgewählt werden, in
-	den die Token importiert werden.</li>
-  <li>Ein Benutzer kann sein Passwort in der WebUI ändern.</li>
-  <li>Im WebUI kann der Benutzer sich selber einen Token zuweisen.</li>
-  <li>Für manche Token wie SSH wird keine OTP PIN verlangt.</li>
-  <li>Unterstützung von pymysql. Einer reinen Python Implementierung.</li>
-  <li>Konkrete Fehlermeldung, wenn ein alter OTP-Wert nochmal verwendet wird.</li>
-</ul>
-<b>Fehlerbehebungen</b>
-<ul>
-  <li>Login an der WebUI jetzt auch mit Login-Namen, die ein @ enthalten.</li>
-  <li>Fehler beim behoben, dass privacyidea.log Datei manchmal nicht geschrieben wurde.</li>
-</ul>
-
-
-
-
-
-<p>
-Änderungen in Version 2.6
-</p>
-<b>Neue Funktionalitäten</b>
-<ul>
-<li>Die OCRA-basierte TiQR App wird nun zur Authentisierung unterstützt.
-   Die Authentisierung erfolgt einfach durch das Scannen eines QR-Codes.</li>
-<li>Challenge Response Authentisierung an der Web UI.</li>
-<li>Neuer 4-Augen Token. Hiermit kann das 4-Augen-Prinzip umgesetzt werden.
-	Zur Authentisierung sind zwei Token von zwei Personen nötig.</li>
-<li>Mit "Token widerrufen" (revoke) können spezielle Aktionen für einen
-    Tokentyp umgesetzt werden. Ein widerrufener Token ist gesperrt und kann
-    nicht mehr geändert oder aktiviert werden.</li>
-</ul>
-
-<b>Erweiterungen</b>
-<ul>
-<li>Informationen zur Hochverfügbarkeit in die Dokumentation aufgenommen.</li>
-<li>OpenVPN-Dokumentation ergänzt.</li>
-<li>Challenge-Response-Richtlinie erlaubt es, für Token wie HOTP oder TOTP 
-    Challenge-Response zu erlauben oder zu verbieten.</li>
-<li>Manche Funktionen wie Tokenrollout in der Web UI lassen sich über 
-    Hotkeys aufrufen.</li>
-<li>Systemweite PassOnNoUser und PassOnNoToken, die keine Funktion hatten, wurden entfernt.
-    Diese Funktionen lassen sich detaillierter über Richtlinien definieren.</li>
-<li>Standardsprache "en" im Web UI gesetzt.</li>
-</ul>
-
-<b>Fehlerbehebungen</b>
-<ul>
-<li>Der LDAP-Fehler #179 wurde behoben. Unter ganz speziellen Bedingungen 
-    erlaubte er sich mit einem falschen LDAP-Passwort zu authentisieren.</li>
-<li>Kleine Fehler in der Testsuite behoben.</li>
-<li>Benutzername im Web UI während der Rollouts korrigiert.</li>
-<li>Defekter Link auf dem privacyIDEA Logo entfernt.</li>
-<li>Benutzer können nun ihre eigenen Token resyncen.</li>
-</ul>
-
-<p>
-Änderungen in Version 2.5
-</p>
-
-<b>Neue Funktionalitäten</b>
-<ul>
-<li>Statistiken</li>
-<li>Deutsche Übersetzung des WebUI</li>
-<li>Hook für PIN Handler, wenn eine zufällige PIN verwendet wird</li>
-<li>Automatische Dokumentation des System-Setups</li>
-<li>ownCloud Plugin</li>
-</ul>
-
-<b>Erweiterungen</b>
-<ul>
-<li>Email und SMS werden aus dem Verzeichnisdienst vorbelegt, wenn ein entsprechender Token ausgerollt wird.</li>
-<li>LDAP anonymous Bind</li>
-<li>Im QR Code können nun der Hashalgorithmus und die Anzahl der OTP-Stellen verwendet werden.</li>
-</ul>
-
-<b>Fehlerbehebungen</b>
-<ul>
-<li>Fehler im Registrierungstoken behoben.</li>
-<li>Fehler bei der Wiederverwendung eines mOTP behoben.</li>
-</ul>
-
-<p>
-Änderungen in Version 2.4
-</p>
-<ul>
-<li>Benutzermanagement für Benutzer in SQL-Datenbanken.</li>
-<li>Admin Realms können nun in Policies verwendet werden, so dass Policies
- in großen Szenarien leichter zu definieren sind.</li>
-<li>API Keys können den Zugriff auf /validate/check reglementieren</li>
-<li>PSKC Dateien mit Token-Seeds können nun importiert werden.</li>
-<li>Ein detailiertes logging ist nun möglich. Schwere Fehler können per Email gesendet werden.</li>
-<li>WebUI: Registrierungstoken können nun auch aus dem WebUI heraus ausgerollt werden.</li>
-<li>WebUI: Das reine Token-Seed kann nach der Erzeugung eines Tokens angezeigt werden.</li>
-<li>WebUI: Es werden nur die Token-Typen aufgelistet, die auch tatsächlich per Policy ausgerollt werden dürfen.</li>
-<li>WebUI: Login_Mode Policy: Hiermit kann der Zugriff auf das WebUI komplett verboten werden.</li>
-<li>WebUI: Im Audit-View gibt es nun einen Reload-Button.</li>
-<li>SQLResolver: Das WHERE-Statement wird nun immer verwendet.</li>
-<li>SSH-Token Applikation: Es werden nur die SSH-Keys des angefragten Benutzers zurückgegeben.</li>
-<li>Der Apache Client kann nun mit mehreren vhosts umgehen.</li>
-<li>Die Dokumentation für Token-Typen wurde erweitert.</li>
-<li>WebUI Fix: Download des Audit-Log.</li>
-</ul>
-
-
-<p>
-Änderungen in Version 2.3.1
-</p>
-<ul>
-<li>Das Problem, dass ein Benutzer abgemeldet wird, wenn er einen Token ausrollen will, wurde behoben.</li>
-</ul>
-
-<p>
-Änderungen in Version 2.3
-</p>
-
-<ul>
-<li>Konnektor für Zertifizierungsstellen hingefügt.</li>
-<li>Neuer Tokentyp "certificate", um Benutzerzertifikate zu verwalten.</li>
-<li>Neuer Tokentyp "registration", um Massenrollout zu erleichtern.</li> 
-<li>Neuer Tokentyp "Email", der OTP-Werte per Mail versendet.</li>
-<li>"First Steps" in der Online Dokumentation.</li>
-<li>Gültigkeitsperiode von Token.</li>
-<li>Auditlog per Download als CSV Datei.</li>
-<li>Prioritäten von Resolvern verhindern Konflikt, wenn ein Benutzername
-    öfters in einem Realm vorkommt.</li>
-<li>TYPO3 Plugin.</li>
-<li>SCIM Resolver.</li>
-  
-<li>Fehler mit Failcounter behoben.</li>
-<li>Fehler mit NTLM Passwort Check behoben.</li>
-<li>Fehler mit timestep für TOTP Token behoben.</li>
-<li>Fehler beim Import von Yubikey-Dateien behoben.</li>
-
-</ul>
-<p>
-<b>Bitte beachten Sie:</b> privacyIDEA kann für bis zu 10 zugewiesenen Token 
-kostenlost verwendet werden. In Version 2.3 wird die Anzahl der
-zugewiesenen Token nun überprüft. Wenn Sie mehr als 10 Token zuweisen
-möchten, erhalten Sie eine Subskriptions-Datei vom Hersteller.
-</p>
