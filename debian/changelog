@@ -1,6 +1,14 @@
-privacyidea-ucs (2.18.1-1) wheezy; urgency=low
+privacyidea-ucs (2.19.1-1) jessie; urgency=low
+
+  * Update to 2.19.1
+
+ -- NetKnights GmbH <info@netknights.it>  Tue, 04 Jul 2017 23:00:00 +0200
+
+privacyidea-ucs (2.18.1-2) wheezy; urgency=low
 
   * Update to 2.18.1
+  * add dependency to libffi5
+  * change apache config file
 
  -- NetKnights GmbH <info@netknights.it>  Thu, 30 Mar 2017 10:30:00 +0200
 

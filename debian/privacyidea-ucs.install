@@ -8,7 +8,7 @@ deploy/usr/lib/univention-install/12privacyidea.inst usr/lib/univention-install/
 deploy/usr/lib/univention-uninstall/12privacyidea.uinst usr/lib/univention-uninstall/
 
 # apache config
-deploy/apache/sites-available/privacyidea	etc/apache2/sites-available/
+deploy/apache/sites-available/privacyidea.conf	etc/apache2/sites-available/
 
 # Add license controller
 deploy/privacyidea-patch/api/subscription.py		opt/privacyidea/privacyidea-venv/lib/python2.7/site-packages/privacyidea/api/
