@@ -110,7 +110,11 @@ case "$1" in
 	create_user
 	adapt_pi_cfg
 	create_database
+
+	a2dissite privacyidea
+        dpkg-maintscript-helper rm_conffile /etc/apache2/sites-available/privacyidea 2.18.1-1~ -- "$@"
 	enable_apache
+
 	create_files
 #	enable_weblink
 	update_database
