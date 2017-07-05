@@ -40,7 +40,7 @@ def check_subscription(request, action):
     subscription_count = subscription.get("subscription")
 
     # The subscription_count==0 means unlimited users
-    if subscription_count >= 0:
+    if subscription_count != 2:
         check_signature(subscription)
 
     if subscription_count != 0 and token_count >= subscription_count:
@@ -56,7 +56,7 @@ def get_subscription():
     """
     DEFAULT_SUB = """{'systemid': 'unknown',
                       'customername': 'Not registered',
-                      'subscription': -1,
+                      'subscription': 2,
                       'supportlevel': 'No Support',
                       'expires': 'never',
                       'signature': None}"""
