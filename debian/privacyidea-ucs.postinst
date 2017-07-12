@@ -119,7 +119,8 @@ case "$1" in
 #	enable_weblink
 	update_database
 	update-rc.d apache2 defaults
-	service apache2 restart
+	# automatic update tests could fail otherwise
+	service apache2 restart || true
   ;;
 
   abort-upgrade|abort-remove|abort-deconfigure)
