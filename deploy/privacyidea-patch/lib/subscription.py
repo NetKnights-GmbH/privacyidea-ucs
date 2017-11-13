@@ -2,7 +2,9 @@
 #
 # (c) Cornelius Kölbel, NetKnights GmbH
 #
-# 2016-92-15 Cornelius Kölbel, <cornelius.koelbel@netknights.it>
+# 2017-11-13 Cornelius Kölbel <cornelius.koelbel@netknights.it>
+#            We now simply use the base function of the subscription.
+# 2016-02-15 Cornelius Kölbel, <cornelius.koelbel@netknights.it>
 #            Add expiration date
 # 2015-04-17 Cornelius Kölbel, <cornelius.koelbel@netknights.it>
 #            Initial writeup
@@ -12,17 +14,7 @@ __doc__ = """This is the code for verifying the subscriptions on
 the Univention Corporate Server
 """
 import logging
-from privacyidea.lib.token import get_tokens
-from privacyidea.lib.error import TokenAdminError, ConfigAdminError
-from privacyidea.lib.config import (set_privacyidea_config,
-                                    get_from_config)
-from privacyidea.lib.crypto import encrypt, geturandom
-import binascii
-import yaml
-from Crypto.Hash import SHA256
-from Crypto.PublicKey import RSA
-import traceback
-import datetime
+from privacyidea.lib.subscriptions import check_subscription as check_base_subscription
 
 
 log = logging.getLogger(__name__)
@@ -32,90 +24,7 @@ def check_subscription(request, action):
     """
     Check if another token is allowed to be enrolled or assigned.
     It check if the total assigned tokens exceed the subscription count.
-    Raises a TokenAdminError, if exceeded.
+    Raises a SubscriptionError, if exceeded.
     """
-    # get the number of assigned tokens
-    token_count = get_tokens(assigned=True, count=True)
-    subscription = get_subscription()
-    subscription_count = subscription.get("subscription")
-
-    # The subscription_count==0 means unlimited users
-    if subscription_count != 2:
-        check_signature(subscription)
-
-    if subscription_count != 0 and token_count >= subscription_count:
-            raise TokenAdminError("Subscription limit exceeded. You are only "
-                                  "entitled to assign %s tokens to users."
-                                  " Please contact NetKnights for a subscription!" %
-                                  subscription_count, id=34131)
-
-
-def get_subscription():
-    """
-    Returns the license from the Config database
-    """
-    DEFAULT_SUB = """{'systemid': 'unknown',
-                      'customername': 'Not registered',
-                      'subscription': 2,
-                      'supportlevel': 'No Support',
-                      'expires': 'never',
-                      'signature': None}"""
-    subscription = yaml.load(get_from_config("subscription", DEFAULT_SUB))
-    return subscription
-
-
-def check_signature(subscription):
-    """
-    Raises an Exception, if the signature does not match
-    """
-    public = """-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz5gPkPYCAgab5nagG5G+
-cUATHv/k5pNXU4z2Wc7h2BaJSJt2rspG109QNQyWqc28JwH/STzBQ8FZbxlyQ+zT
-0xzrydfKBElLceFY/Jb7JtDdXarSvIFqejo2k5wW4yKWJYlIyqNQOYAnWVjQImOG
-8Xu19uNxY+Fw5v5XBSgYPzt6q0AmzhD4udK8sYP7HLd+1LCa0X5H96Mef86NoPL3
-W/E9n5Wel7Z621mPsx6lxgZiqLa2Bn79HMxkxkQ5muWIollss1yAKMStLkp7iISF
-GW0yofQJjWecUHwBkZlawBz0lJBKDQObtUsjHB80VTnPGTcs4KYH+if8UHoR6Aug
-4wIDAQAB
------END PUBLIC KEY-----"""
-    try:
-        RSAkey = RSA.importKey(public)
-        hashvalue = SHA256.new("%s%s%s%s%s" % (subscription.get("systemid"),
-                                               subscription.get("customername"),
-                                               subscription.get("subscription"),
-                                               subscription.get("supportlevel"),
-                                               subscription.get("expires"))).digest()
-        signature = long(subscription.get("signature") or "100")
-        r = RSAkey.verify(hashvalue, (signature,))
-    except Exception as exx:
-        log.debug(traceback.format_exc())
-        raise ConfigAdminError("This is no valid subscription file. The "
-                               "signature check failed.", id=132)
-    if r is False:
-        raise ConfigAdminError("This is no valid subscription file. Invalid "
-                               "signature.", id=133)
-
-    # check the expiration date
-    if subscription.get("expires") != "never":
-        date_now = datetime.datetime.utcnow() - datetime.timedelta(days=1)
-        date_exp = datetime.datetime.strptime(subscription.get("expires"),
-                                              "%Y-%m-%d")
-        if date_now > date_exp:
-            raise ConfigAdminError("Your subscription has expired. Please "
-                                   "contact NetKnights for a new "
-                                   "subscription!", id=134)
-    
-    return True
-
-
-def set_subscription(subscription):
-    check_signature(subscription)
-    set_privacyidea_config(key="subscription", value=yaml.dump(subscription),
-                           desc="subscription on UCS")
-
-
-def create_subscription_request():
-    iv = geturandom(16)
-    enc = encrypt("privacy IDEA", iv=iv)
-    r = binascii.hexlify(enc + iv)
-    return {"systemid": r}
-
+    # check the base subscription
+    check_base_subscription("privacyidea", max_free_subscriptions=2)
