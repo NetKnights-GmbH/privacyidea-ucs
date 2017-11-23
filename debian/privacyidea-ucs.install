@@ -1,5 +1,6 @@
 deploy/pi.cfg                            etc/privacyidea/
 deploy/apache/privacyideaapp.wsgi        etc/privacyidea/
+deploy/NetKnights.pem			 etc/privacyidea/
 
 deploy/privacyIDEA.png			var/www/icon/
 
