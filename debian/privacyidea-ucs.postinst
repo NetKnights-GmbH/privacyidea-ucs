@@ -66,7 +66,7 @@ adapt_pi_cfg() {
 create_database() {
 	# create the MYSQL database
 	if [ !$(grep "^SQLALCHEMY_DATABASE_URI = 'pymysql" /etc/privacyidea/pi.cfg || true) ]; then
-	    USER="debian-sys-maint"
+	    USER="root"
 	    PASSWORD=$(grep "^password" /etc/mysql/debian.cnf | sort -u | cut -d " " -f3)
 	    NPW="$(tr -dc A-Za-z0-9_ </dev/urandom | head -c12)"
 	    mysql -u $USER --password=$PASSWORD -e "create database pi;" || true
