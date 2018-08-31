@@ -6,7 +6,7 @@ info:
 	@echo "make package"
 	
 #VERSION=1.3~dev5
-VERSION=2.21.4
+VERSION=2.23
 SRCDIRS=deploy debian
 SRCFILES=Makefile
 

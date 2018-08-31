@@ -32,6 +32,11 @@ create_files() {
         touch /var/log/privacyidea/privacyidea.log
 	. /opt/privacyidea/privacyidea-venv/bin/activate
         pi-manage create_enckey || true
+
+	# Before we create the DB, we need to restart mysql, so
+	# the the necessary innodb settings from 60-privacyidea.cnf
+	# are read
+	service mysql restart	
         pi-manage createdb || true
         pi-manage create_audit_keys || true
 	pi-manage policy create tokenlabel enrollment "tokenlabel=<u>@<r>/<s>" || true

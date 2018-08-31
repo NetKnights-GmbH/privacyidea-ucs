@@ -2,6 +2,9 @@ deploy/pi.cfg                            etc/privacyidea/
 deploy/apache/privacyideaapp.wsgi        etc/privacyidea/
 deploy/NetKnights.pem			 etc/privacyidea/
 
+# add config for mariadb 10.1 on UCS 4.3
+deploy/mysql/60-privacyidea.cnf		etc/mysql/mariadb.conf.d/
+
 deploy/privacyIDEA.png			var/www/icon/
 
 # join script
