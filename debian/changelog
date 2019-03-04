@@ -1,3 +1,15 @@
+privacyidea-ucs (2.23.5-1) stretch; urgency=medium
+
+  * Update to 2.23.5
+
+ -- NetKnights GmbH <info@netknights.it>  Mon, 04 Mar 2018 18:00:00 +0200
+
+privacyidea-ucs (2.23.2-1) stretch; urgency=medium
+
+  * Update to 2.23.2
+
+ -- NetKnights GmbH <info@netknights.it>  Fri, 07 Sep 2018 13:00:00 +0200
+
 privacyidea-ucs (2.23.1-1) stretch; urgency=medium
 
   * Update to 2.23.1
