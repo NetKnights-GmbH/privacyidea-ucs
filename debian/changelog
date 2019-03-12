@@ -1,8 +1,14 @@
+privacyidea-ucs (2.23.5-2) stretch; urgency=medium
+
+  * Fix install issue with UCS 4.4
+
+ -- NetKnights GmbH <info@netknights.it>  Tue, 12 Mar 2019 16:20:00 +0200
+
 privacyidea-ucs (2.23.5-1) stretch; urgency=medium
 
   * Update to 2.23.5
 
- -- NetKnights GmbH <info@netknights.it>  Mon, 04 Mar 2018 18:00:00 +0200
+ -- NetKnights GmbH <info@netknights.it>  Mon, 04 Mar 2019 18:00:00 +0200
 
 privacyidea-ucs (2.23.2-1) stretch; urgency=medium
 

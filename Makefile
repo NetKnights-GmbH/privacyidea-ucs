@@ -9,9 +9,10 @@ info:
 VERSION=2.23.5
 SRCDIRS=deploy debian
 SRCFILES=Makefile
+DEBVERSION=${VERSION}-2
 
 package:
-	tar -zcf pi-${VERSION}.tgz meta/ DEBUILD/privacyidea-ucs_${VERSION}-1_all.deb privacyidea-venv_${VERSION}-1_amd64.deb
+	tar -zcf pi-${VERSION}.tgz meta/ DEBUILD/privacyidea-ucs_${DEBVERSION}_all.deb privacyidea-venv_${DEBVERSION}_amd64.deb
 
 clean:
 	rm -fr DEBUILD
